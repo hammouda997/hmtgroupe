@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar-container">
-      <div className="logo">              <img src='/images/logo3.png' alt='logo' ></img>
+      <div className="logo">              <img className='logo-img' src='/images/logo3.png' alt='logo' ></img>
       </div>
       <FaBars className="menu-icon" onClick={toggleSidebar} />
       <div className="search-container">
@@ -32,7 +32,7 @@ const Navbar = () => {
               <FaTimes />
             </button>
             <div className="logo-drop">
-              <img src='/images/logo3.png'></img>
+              <img className='logo-img-sidebar' src='/images/logo3.png' alt='img'/>
             </div>
             <ul className="sidebar-links">
               <li><a href="/home">Home</a></li>

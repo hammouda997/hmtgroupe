@@ -1,0 +1,14 @@
+.Products {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .FilterSidebar {
+    width: 250px; /* Adjust as needed */
+  }
+  
+  .ProductDisplay {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  

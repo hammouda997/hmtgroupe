@@ -4,22 +4,19 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './pages/HomePage';
 
 import './App.css';
+import Products from './pages/Products/Products';
 
 const App = () => {
   return (
-    <Router>
-      <div className="app-container">
+      <div className="App">
         <Navbar />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
-            <Route path="/contact" element={<Contact />} /> */}
           </Routes>
         </main>
       </div>
-    </Router>
   );
 };
 

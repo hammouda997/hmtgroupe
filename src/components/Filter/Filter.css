@@ -1,0 +1,76 @@
+.filter-sidebar {
+    width: 20%;
+    padding: 20px;
+    background-color: #fff; /* Set background to white */
+    border: 1px solid #e5e5e5; /* Add a light border */
+    font-family: 'Arial', sans-serif; /* Use a clean, modern font */
+  }
+  
+  .filter-sidebar h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600; /* Make the headings bold */
+    color: #333; /* Dark gray color for headings */
+  }
+  
+  .filter-sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .filter-sidebar ul li {
+    margin: 10px 0;
+    font-size: 16px; /* Slightly larger font size */
+    color: #666; /* Medium gray color for text */
+  }
+  
+  .filter-sidebar ul li input[type="checkbox"] {
+    margin-right: 10px; /* Add space between checkbox and label */
+  }
+  
+  .price-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+    appearance: none;
+    background: #ddd; /* Light gray background for the slider */
+    height: 8px;
+    border-radius: 5px;
+    outline: none; /* Remove outline on focus */
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #888; /* Darker gray thumb */
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #888;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  input[type="range"]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #888;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  

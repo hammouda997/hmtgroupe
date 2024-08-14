@@ -5,6 +5,7 @@
   padding: 1rem ;
   background-color: white;
   position: relative; /* Ensure the sidebar is positioned relative to the navbar */
+  margin-top: -20px;
 }
 
 .logo {

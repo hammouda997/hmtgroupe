@@ -1,26 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './HeroSection.css';
 
 const HeroSectionData = [
+  {
+    subtitle: 'Unleash Your Design Vision',
+    title: 'Advanced Embroidery for Stunning Results',
+    image: '/images/robe1.png',
+  },
+  {
+    subtitle: 'Elevate Your Creative Potential',
+    title: 'Transform Fabrics with Cutting-Edge Technology',
+    image: '/images/cutmachine.png',
+  },
   {
     subtitle: 'Exceptional Craftsmanship Meets Innovation',
     title: 'Master the Art of Embroidery Machines',
     image: '/images/machine.png',
   },
-  {
-    subtitle: 'Elevate Your Creative Potential',
-    title: 'Transform Fabrics with Cutting-Edge Technology',
-    image: '/images/fabric.png',
-  },
-  {
-    subtitle: 'Unleash Your Design Vision',
-    title: 'Advanced Embroidery for Stunning Results',
-    image: '/images/design.png',
-  },
 ];
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-change slide every 3 seconds (3000 ms)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % HeroSectionData.length);
+    }, 3250);
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(interval);
+  }, []);
 
   const handleDotClick = (index) => {
     setCurrentIndex(index);

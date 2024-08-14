@@ -1,17 +1,27 @@
-import React from 'react';
+import React , { useState }  from 'react';
 
 import ProductDisplay from '../../components/ProductsDisplay/ProductsDisplay';
+import footer from '../../components/footer/footer';
 import FilterSidebar from '../../components/Filter/Filter';
 import '../Products/Products.css'
+import OffersSection from '../../components/Offers/OfferSection';
 
 function Products() {
+  const [selectedCategories, setSelectedCategories] = useState([]);
   return (
+    <>
     <div className="Products">
-       <FilterSidebar/>
-      <ProductDisplay/>
+        <FilterSidebar onCategoryChange={setSelectedCategories} />
+      <ProductDisplay selectedCategories={selectedCategories} />
+      
      
 
     </div>
+    <div>
+      <OffersSection/>
+      
+    </div>
+    </>
   );
 }
 

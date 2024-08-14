@@ -1,0 +1,52 @@
+.deal-of-the-week {
+    width: 80%;
+    justify-content: center;
+    display: flex;
+    margin-top: 40px;
+    align-items: center;
+    padding: 20px;
+    background-color: #dadada44;
+    margin-left: 150px;
+  }
+  
+  .deal-content {
+    max-width: 50%;
+    justify-content: center;
+  }
+  
+  .deal-tagline {
+    font-size: 18px;
+    color: #000000;
+    text-align: center;
+    font-weight: 800;
+  }
+  
+  .deal-title {
+    font-size: 40px;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .deal-description {
+    font-size: 16px;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .deal-button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 220px;
+    margin-top: 30px;
+  }
+  
+  .deal-image img {
+    width: 450px;
+    height: 400px;
+    margin-left: 80px;
+  }
+  

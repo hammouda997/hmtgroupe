@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Filter.css';
 
-const FilterSidebar = () => {
+const FilterSidebar = ({ onCategoryChange }) => {
+  const [activeCategory, setActiveCategory] = useState(null);
+
+  const handleCategoryChange = (category) => {
+    const newActiveCategory = activeCategory === category ? null : category;
+    setActiveCategory(newActiveCategory);
+    onCategoryChange(newActiveCategory ? [newActiveCategory] : []); // Pass selected category to parent
+  };
+
   return (
     <div className="filter-sidebar">
       <h3>Select Price Range</h3>
@@ -12,21 +20,19 @@ const FilterSidebar = () => {
       </div>
 
       <h3>Product Categories</h3>
-      <ul>
-        <li><input type="checkbox" /> Featured Products (4)</li>
-        <li><input type="checkbox" /> Floor Lamps (4)</li>
-        <li><input type="checkbox" /> Hanging Lamps (5)</li>
-        <li><input type="checkbox" /> Modern Lamps (2)</li>
-        <li><input type="checkbox" /> Table Lamps (3)</li>
-      </ul>
+      <div className="categories">
+        {['Home Embroidery Machines', 'Commercial', 'Single-Needle', 'Multi-Needle', 'Industrial'].map((category) => (
+          <button
+            key={category}
+            className={`category-button ${activeCategory === category ? 'selected' : ''}`}
+            onClick={() => handleCategoryChange(category)}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
 
-      <h3>Brands</h3>
-      <ul>
-        <li><input type="checkbox" /> Home Decor (2)</li>
-        <li><input type="checkbox" /> Nextcart Nexus (5)</li>
-        <li><input type="checkbox" /> Urban Lights Emporium (3)</li>
-        <li><input type="checkbox" /> Company 123 (4)</li>
-      </ul>
+      
     </div>
   );
 };

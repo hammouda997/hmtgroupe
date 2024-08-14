@@ -3,8 +3,7 @@ import HeroSection from '../components/Hero/HeroSection';
 import Collections from '../components/Collections/Collections';
 import FeaturedProducts from '../components/Feature/feature';
 import Inspiration from '../components/Inspiration/Inspiration';
-import './HomePage.css';  // Import the CSS file for HomePage
-
+import './HomePage.css';  
 function HomePage() {
   return (
     <div className="home-page">

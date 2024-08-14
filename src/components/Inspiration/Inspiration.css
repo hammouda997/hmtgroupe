@@ -32,7 +32,7 @@
   .inspiration-grid {
     display: flex;
     justify-content: center;
-    gap: 50px; /* Adjust spacing between images */
+    gap: 50px; 
     overflow: hidden;
   }
   
@@ -65,35 +65,35 @@
   }
   
   .details-button {
-    height: 50px;               /* Set fixed height */
-    width: 150px;               /* Set fixed width */
-    margin-top: 10px;           /* Space above the button */
-    background-color: #303030; /* Dark background color */
-    color: white;              /* White text color */
-    border: none;              /* Remove default border */
-    border-radius: 8px;       /* Rounded corners */
-    padding: 0;               /* Remove padding */
-    cursor: pointer;          /* Pointer cursor on hover */
-    font-size: 16px;          /* Font size */
-    text-align: center;       /* Center text horizontally */
-    line-height: 50px;        /* Vertically center text */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-    display: flex;            /* Use flexbox for alignment */
-    align-items: center;      /* Center text vertically */
-    justify-content: center;  /* Center text horizontally */
+    height: 50px;              
+    width: 150px;             
+    margin-top: 10px;         
+    background-color: #303030; 
+    color: white;             
+    border: none;              
+    border-radius: 8px;      
+    padding: 0;              
+    cursor: pointer;         
+    font-size: 16px;         
+    text-align: center;       
+    line-height: 50px;       
+    transition: background-color 0.3s ease;
+    display: flex;           
+    align-items: center;      
+    justify-content: center; 
   }
   
   .details-button:hover {
-    background-color: #686868; /* Lighter color on hover */
+    background-color: #686868; 
   }
   
   .details-button:active {
-    background-color: #505050; /* Darker color when clicked */
+    background-color: #505050; 
   }
   
   .insp-prev-button {
     position: absolute;
-    left: 20px;               /* Adjust positioning as needed */
+    left: 20px;               
     top: 50%;
     transform: translateY(-50%);
     background-color: #303030;
@@ -102,13 +102,13 @@
     border-radius: 8px;
     padding: 10px 15px;
     cursor: pointer;
-    font-size: 20px; /* Larger font size for arrows */
+    font-size: 20px;
     transition: background-color 0.3s ease;
   }
   
   .insp-next-button {
     position: absolute;
-    right: 20px;              /* Adjust positioning as needed */
+    right: 20px;              
     top: 50%;
     transform: translateY(-50%);
     background-color: #303030;
@@ -117,16 +117,15 @@
     border-radius: 8px;
     padding: 10px 15px;
     cursor: pointer;
-    font-size: 20px; /* Larger font size for arrows */
+    font-size: 20px; 
     transition: background-color 0.3s ease;
   }
   
   .insp-prev-button:hover,
   .insp-next-button:hover {
-    background-color: #686868; /* Lighter color on hover */
-  }
+    background-color: #686868; }
   
   .insp-prev-button:active,
   .insp-next-button:active {
-    background-color: #505050; /* Darker color when clicked */
+    background-color: #505050; 
   }

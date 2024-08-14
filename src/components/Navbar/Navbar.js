@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import { FaSearch, FaBars, FaUser, FaShoppingCart, FaCog, FaTimes } from 'react-icons/fa';
+import { FaSearch, FaBars, FaUser, FaShoppingCart,  FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

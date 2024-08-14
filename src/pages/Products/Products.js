@@ -1,7 +1,6 @@
 import React , { useState }  from 'react';
 
 import ProductDisplay from '../../components/ProductsDisplay/ProductsDisplay';
-import footer from '../../components/footer/footer';
 import FilterSidebar from '../../components/Filter/Filter';
 import '../Products/Products.css'
 import OffersSection from '../../components/Offers/OfferSection';

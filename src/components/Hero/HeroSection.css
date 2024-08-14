@@ -91,3 +91,25 @@
   background-color: #555;
   transform: scale(1.1);
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 250px; /* Adjust as needed */
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb; /* Default dot color */
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333; /* Active dot color */
+  width: 18px; /* Increase width for the active dot */
+  transform: scale(1.2); /* Slightly enlarge the active dot */
+}

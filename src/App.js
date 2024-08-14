@@ -5,6 +5,7 @@ import Home from './pages/HomePage';
 
 import './App.css';
 import Products from './pages/Products/Products';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
             <Route path="/products" element={<Products />} />
           </Routes>
         </main>
+        <Footer/>
       </div>
   );
 };

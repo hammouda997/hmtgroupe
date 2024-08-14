@@ -1,0 +1,22 @@
+.home-page {
+    /* General styles for the whole page */
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .home-hero {
+    margin-bottom: 40px; /* Adjust spacing below HeroSection */
+  }
+  
+  .home-inspiration {
+    margin-bottom: 40px; /* Adjust spacing below Inspiration section */
+  }
+  
+  .home-collections {
+    margin-bottom: 40px; /* Adjust spacing below Collections section */
+  }
+  
+  .home-featured-products {
+    margin-bottom: 40px; /* Adjust spacing below FeaturedProducts section */
+  }
+  

@@ -7,7 +7,7 @@ const FilterSidebar = ({ onCategoryChange }) => {
   const handleCategoryChange = (category) => {
     const newActiveCategory = activeCategory === category ? null : category;
     setActiveCategory(newActiveCategory);
-    onCategoryChange(newActiveCategory ? [newActiveCategory] : []); // Pass selected category to parent
+    onCategoryChange(newActiveCategory ? [newActiveCategory] : []); 
   };
 
   return (

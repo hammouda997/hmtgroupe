@@ -50,7 +50,6 @@ const FeaturedProducts = () => {
       <h2>See What's New!</h2>
       <p>Discover the Cutting-Edge Trends in Embroidery Technology!</p>
 
-      {/* Category Buttons */}
       <div className="category-buttons_home">
         {categories.map((category, index) => (
           <button
@@ -63,7 +62,6 @@ const FeaturedProducts = () => {
         ))}
       </div>
 
-      {/* Products Grid */}
       <div className="products-grid_home">
         {filteredProducts.map((product, index) => (
           <div className="product-card_home" key={index}>

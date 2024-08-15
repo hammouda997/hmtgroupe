@@ -90,7 +90,6 @@ const Navbar = () => {
       )}
       </div>
       <div className="icon-container">
-        {/* Add icons or other elements here */}
       </div>
       {isSidebarOpen && (
         <>
@@ -111,7 +110,6 @@ const Navbar = () => {
           <div className="overlay" onClick={toggleSidebar}></div>
         </>
       )}
-      {/* Display search results */}
       
     </div>
   );

@@ -5,7 +5,7 @@ import Home from './pages/HomePage';
 
 import './App.css';
 import Products from './pages/Products/Products';
-import Footer from './components/Footer/footer';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (

@@ -95,13 +95,16 @@ const Inspiration = () => {
       });
     }, { threshold: 0.1 });
 
-    if (inspirationRef.current) {
-      observer.observe(inspirationRef.current);
+    // Use a local variable to store the current value of the ref
+    const currentRef = inspirationRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (inspirationRef.current) {
-        observer.unobserve(inspirationRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -168,7 +171,7 @@ const Inspiration = () => {
               <img 
                 className="inspiration-image" 
                 src={hoveredIndex === index ? item.images[imageIndexes[index] || 0]?.src : item.images[0]?.src} 
-                alt={item.images[0]?.alt} 
+                alt={hoveredIndex === index ? item.images[imageIndexes[index] || 0]?.alt : item.images[0]?.alt || ''}
               />
               <h3 className="inspiration-name">{item.name}</h3>
               <div className="inspiration-details">

@@ -1,156 +1,151 @@
-@keyframes joinEffect {
-    0% {
-      transform: scale(1);
-      opacity: 0.5;
-    }
-    100% {
-      transform: scale(1.1);
-      opacity: 1;
-    }
-  }
-  
-  .inspiration-container {
-    position: relative;
-    text-align: center;
-    margin-top: 50px;
-    
-  }
-  
-  .inspiration-title {
-    font-size: 45px;
-    margin-bottom: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .inspiration-navigation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .inspiration-grid {
-    display: flex;
-    justify-content: center;
-    gap: 50px; 
-    overflow: hidden;
-  }
-  
-  .inspiration-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-    height: 80vh;
-    transform: scale(1);
-  }
-  
-  .inspiration-card.visible {
-    animation: joinEffect 2s forwards;
-  }
-  
-  .inspiration-image {
-    width: 250px;
-    height: 300px;
-    padding: 2rem 3rem;
-  }
-  
-  .inspiration-details {
-    display: block;
-    margin-top: 10px;
-    text-align: center;
-  }
-  
-  .details-button {
-    height: 50px;              
-    width: 150px;             
-    margin-top: 10px;         
-    background-color: #303030; 
-    color: white;             
-    border: none;              
-    border-radius: 8px;      
-    padding: 0;              
-    cursor: pointer;         
-    font-size: 16px;         
-    text-align: center;       
-    line-height: 50px;       
-    transition: background-color 0.3s ease;
-    display: flex;           
-    align-items: center;      
-    justify-content: center; 
-  }
-  
-  .details-button:hover {
-    background-color: #686868; 
-  }
-  
-  .details-button:active {
-    background-color: #505050; 
-  }
-  
-  .insp-prev-button {
-    position: absolute;
-    left: 20px;               
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #303030;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 20px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .insp-next-button {
-    position: absolute;
-    right: 20px;              
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #303030;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 20px; 
-    transition: background-color 0.3s ease;
-  }
-  
-  .insp-prev-button:hover,
-  .insp-next-button:hover {
-    background-color: #686868; }
-  
-  .insp-prev-button:active,
-  .insp-next-button:active {
-    background-color: #505050; 
-  }
-  .pagination-dots-insp {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 5px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .inspiration-card:hover .pagination-dots {
-    opacity: 1;
-  }
-  
-  .dot-insp {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #ccc;
-    transition: background-color 0.3s ease;
-  }
-  
-  .dot-insp.active {
-    background-color: #333;
-  }
+.inspiration-container {
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.inspiration-title {
+  font-size: 45px;
+  margin-bottom: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.inspiration-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.inspiration-grid {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.inspiration-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  height: 80vh;
+  transform: scale(1);
+}
+
+.inspiration-card.visible {
+  animation: joinEffect 2s forwards;
+}
+
+.inspiration-image {
+  width: 250px;
+  height: 300px;
+  padding: 2rem 3rem;
+}
+
+.inspiration-details {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.details-button {
+  height:auto;
+  width: 150px;
+  margin-top: 10px;
+  background-color: #303030;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  line-height: 50px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.details-button:hover {
+  background-color: #686868;
+}
+
+.details-button:active {
+  background-color: #505050;
+}
+
+.insp-prev-button,
+.insp-next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: background-color 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+}
+
+.insp-prev-button:hover,
+.insp-next-button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.insp-prev-button:active,
+.insp-next-button:active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.inspiration-container:hover .insp-prev-button,
+.inspiration-container:hover .insp-next-button {
+  opacity: 1;
+  visibility: visible;
+}
+
+.insp-prev-button {
+  left: 10px;
+}
+
+.insp-next-button {
+  right: 10px;
+}
+
+.pagination-dots-insp {
+  position: relative;
+  bottom: 20%;
+  left: 5%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  opacity: 1; 
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.dot-insp {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s ease;
+}
+
+.dot-insp.active {
+  background-color: #333;
+}
+
+.dot-insp:hover {
+ cursor: pointer;
+}

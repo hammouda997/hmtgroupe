@@ -1,28 +1,34 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 .sidebar-indicator {
   position: fixed; 
   bottom: 0;
   left: 0;
-  width: 100%; 
+  right: 0;
+  width: 100vw;
+  max-width: 100%; 
   background-color: #282c34; 
-  padding: 15px;
+  padding: 10px;
   border-radius: 12px 12px 0 0; 
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
   transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
   z-index: 9999999;
   border-top: 1px solid #444; 
   display: flex; 
-  justify-content: center; 
+  justify-content: flex-start; 
   overflow-x: auto; 
-}
-
-.hide-on-hero {
-  display: none;
+  white-space: nowrap;
+  box-sizing: border-box; 
 }
 
 .sidebar-indicator.hidden {
-  opacity: 0;
-  visibility: hidden;
   transform: translateY(100%); 
+  visibility: hidden; 
+  opacity: 0; 
 }
 
 .indicator-item {
@@ -33,6 +39,7 @@
   border-radius: 10px; 
   color: #f0f0f0; 
   font-size: 14px; 
+  white-space: nowrap; 
 }
 
 .indicator-item.active {
@@ -46,11 +53,23 @@
   color: #fff;
 }
 
+/* Separate the hover state from the active state */
+.indicator-item:not(.active):hover {
+  transform: scale(1.1); 
+}
+
+@media (min-width: 1200px) {
+  .sidebar-indicator {
+    justify-content: center; 
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 600px) {
   .sidebar-indicator {
     padding: 10px;
-    flex-direction: row; 
-    overflow-x: auto; 
+    justify-content: flex-start;
   }
 
   .indicator-item {
@@ -60,6 +79,30 @@
   }
 
   .indicator-item.active {
+    transform: scale(1.2);
+  }
+
+  .indicator-item:not(.active):hover {
+    transform: scale(1.1); 
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar-indicator {
+    padding: 8px;
+  }
+
+  .indicator-item {
+    margin: 0 4px;
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+
+  .indicator-item.active {
     transform: scale(1.1);
+  }
+
+  .indicator-item:not(.active):hover {
+    transform: scale(1.05); 
   }
 }

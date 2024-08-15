@@ -85,14 +85,14 @@ const ProductDisplay = ({ selectedCategories }) => {
           <button className="grid-view active"></button>
           <button className="list-view"></button>
         </div>
-        <div className="sort-options">
+        {/* <div className="sort-options">
           <span>Sort By</span>
           <select>
             <option value="trending">Trending</option>
             <option value="price-low-high">Price: Low to High</option>
             <option value="price-high-low">Price: High to Low</option>
           </select>
-        </div>
+        </div> */}
       </div>
       <div className="product-grid">
         {loading

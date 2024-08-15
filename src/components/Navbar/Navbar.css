@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 1rem ;
+  padding: 1rem;
+  margin-left: 5%;
   background-color: white;
   position: relative; /* Ensure the sidebar is positioned relative to the navbar */
   height: 10vh;
@@ -11,39 +12,39 @@
 .logo {
   size: 10px;
   margin-left: -10%;
-
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 .logo-drop {
   font-size: 1.5rem;
   font-weight: bold;
-justify-content: center;
-  font-family:Arial, Helvetica, sans-serif;
+  justify-content: center;
+  margin-left: 7%;
+  margin-top: 10%;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.logo-img{
-  width:  200px;
-  height: 120px;
-}
-.logo-img-sidebar{
-  margin-left: 20px;
-  width:  200px;
+
+.logo-img {
+  width: 200px;
   height: 120px;
 }
 
+.logo-img-sidebar {
+  margin-left: 20px;
+  width: 200px;
+  height: 120px;
+}
 
 .menu-icon {
   font-size: 1.5rem;
   cursor: pointer;
   margin-left: -10%;
-
 }
-
 
 .search-container {
   position: relative;
   display: flex;
   width: 40%;
-
 }
 
 .search-bar {
@@ -56,13 +57,12 @@ justify-content: center;
 
 .search-icon {
   position: absolute;
-  right: 12px; /* Adjust the position as needed */
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   color: #000000;
   font-size: 20px;
 }
-
 
 .icon-container {
   display: flex;
@@ -81,14 +81,14 @@ justify-content: center;
   color: #000000;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
-  transform: translateX(-100%); /* Initially hidden */
-  transition: transform 0.5s ease-in-out; /* Add transition animation */
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
   z-index: 10000;
 }
 
 .sidebar.open {
-  transform: translateX(0); /* Slide in when open */
-  transition: transform 0.5s ease-in-out; /* Add transition animation */
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
 }
 
 .close-btn {
@@ -100,7 +100,6 @@ justify-content: center;
   position: absolute;
   top: 20px;
   right: 10px;
-
 }
 
 .sidebar-links {
@@ -108,10 +107,9 @@ justify-content: center;
   padding: 0;
   margin-left: 80px;
   font-size: 1.4rem;
-  margin-top: 80px;
+  margin-top: 40px;
   font-weight: 700;
-  font-family:Arial, Helvetica, sans-serif;
-  
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .sidebar-links li {
@@ -122,7 +120,6 @@ justify-content: center;
 .sidebar-links a {
   color: #161616;
   text-decoration: none;
-  
 }
 
 .overlay {
@@ -131,7 +128,49 @@ justify-content: center;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
-  z-index: 900; /* Ensure it's behind the sidebar but above other content */
-  cursor: pointer; /* Add a pointer cursor to indicate the overlay is clickable */
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 900;
+  cursor: pointer;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 95%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1000;
+  max-height: 300px; 
+  overflow-y: auto;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.search-result-item:hover {
+  background-color: #f4f4f4; /* Add hover effect */
+}
+
+.search-result-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.search-result-info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.search-result-info p {
+  margin: 2px 0;
 }

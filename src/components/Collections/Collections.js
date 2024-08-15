@@ -50,13 +50,16 @@ const Collections = () => {
       });
     }, { threshold: 0.1 });
 
-    if (collectionRef.current) {
-      observer.observe(collectionRef.current);
+    // Use a local variable to store the current value of the ref
+    const currentRef = collectionRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (collectionRef.current) {
-        observer.unobserve(collectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

@@ -53,7 +53,6 @@
 }
 
 .details-button {
-  height:auto;
   width: 150px;
   margin-top: 10px;
   background-color: #303030;
@@ -64,9 +63,9 @@
   cursor: pointer;
   font-size: 16px;
   text-align: center;
-  line-height: 50px;
   transition: background-color 0.3s ease;
   display: flex;
+  height: 20%;
   align-items: center;
   justify-content: center;
   margin-bottom: 100px;
@@ -82,20 +81,16 @@
 
 .insp-prev-button,
 .insp-next-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #303030;
   color: white;
   border: none;
-  border-radius: 50%;
-  padding: 10px;
+  border-radius: 5px;
+  padding: 10px 15px;
   cursor: pointer;
-  font-size: 24px;
-  transition: background-color 0.3s ease;
+  font-size: 1rem; /* Responsive font size */
   opacity: 0;
-  visibility: hidden;
-  z-index: 10;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+
 }
 
 .insp-prev-button:hover,
@@ -115,12 +110,17 @@
 }
 
 .insp-prev-button {
-  left: 10px;
-}
+  position: absolute;
+  left: 10px; /* Adjust for small screens */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;}
 
 .insp-next-button {
-  right: 10px;
-}
+  position: absolute;
+  right: 10px; /* Adjust for small screens */
+  top: 50%;
+  transform: translateY(-50%);}
 
 .pagination-dots-insp {
   position: relative;

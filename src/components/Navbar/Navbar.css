@@ -5,7 +5,7 @@
   padding: 1rem;
   margin-left: 5%;
   background-color: white;
-  position: relative; /* Ensure the sidebar is positioned relative to the navbar */
+  position: relative;
   height: 10vh;
 }
 
@@ -81,14 +81,13 @@
   color: #000000;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
-  transform: translateX(-100%);
+  transform: translateX(-100%); /* Start off-screen */
   transition: transform 0.5s ease-in-out;
   z-index: 10000;
 }
 
 .sidebar.open {
   transform: translateX(0);
-  transition: transform 0.5s ease-in-out;
 }
 
 .close-btn {
@@ -120,8 +119,32 @@
 .sidebar-links a {
   color: #161616;
   text-decoration: none;
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: 700;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.sidebar-links a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #f5a623;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+.sidebar-links a:hover,
+.sidebar-links a.active {
+  color: #f5a623; 
+  padding-left: 10px; 
 }
 
+.sidebar-links a:hover::after,
+.sidebar-links a.active::after {
+  width: 100%;
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -173,4 +196,47 @@
 
 .search-result-info p {
   margin: 2px 0;
+}
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column; 
+    height: auto;
+  }
+
+  .logo-img {
+    width: 120px;
+    height: auto;
+  }
+  .logo-img-sidebar {
+    width: 180px;
+    height: auto;
+  }
+  .search-container {
+    width: 100%; 
+    margin-top: 1rem; 
+  }
+
+  .icon-container {
+    margin-top: 1rem;   
+    font-size: 1.25rem;
+    gap: 1rem;
+  }
+
+  .sidebar {
+    left: 35vh;
+    position: fixed;
+  top: 0;
+  width:  45vh;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 10000;
+}
+input:focus {
+  outline: none;
+  border: 1px solid #ccc; /* Optional */
+}
 }

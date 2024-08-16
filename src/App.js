@@ -13,8 +13,8 @@ import ProductDescription from './components/ProductDetails/ProductDetails';
 
 const App = () => {
   return (
-    <Router>
-      <div className="App">
+    <><Router>
+      <div>
         <Navbar />
         <main>
           <Routes>
@@ -26,9 +26,9 @@ const App = () => {
             <Route path="/product-details" element={<ProductDescription/>} />
           </Routes>
         </main>
-        <Footer />
       </div>
-    </Router>
+    </Router><Footer /></>
+
   );
 };
 

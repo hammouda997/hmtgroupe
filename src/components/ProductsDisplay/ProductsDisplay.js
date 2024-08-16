@@ -1,4 +1,4 @@
-import React, { useState , useEffect ,   } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProductsDisplay.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -39,45 +39,36 @@ const Machines = [
 const OtherProducts = [
   {
     name: 'Palestine Embroidery',
-   
     image: './images/Palestine.png',
     category: 'Electronics',
   },
   {
     name: 'Deko Embroidery',
-  
     image: './images/product1.png',
     category: 'Wearables',
   },
   {
     name: 'Nanami Embroidey',
-   
     image: './images/product2.png',
     category: 'Electronics',
   },
   {
     name: 'Gon Embroidery',
-   
     image: './images/Gon.png',
     category: 'Office Supplies',
   },
   {
     name: 'Sussuke Embroidey',
-   
     image: './images/Machine1-Product1.png',
     category: 'Fitness',
   },
   {
     name: 'Naruto Embroidery',
-   
     image: './images/Machine1-Product2.png',
     category: 'Office Supplies',
   },
-
   // Add more products here...
 ];
-
-
 
 const ProductDisplay = ({ selectedCategories, activeCategory, onActiveCategoryChange }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -93,7 +84,13 @@ const ProductDisplay = ({ selectedCategories, activeCategory, onActiveCategoryCh
     
     // Simulate a delay for loading products
     const timeout = setTimeout(() => {
-      const productData = activeCategory === 'embroidery' ? Machines : OtherProducts;
+      let productData = [];
+      if (activeCategory === 'machine' || activeCategory === 'all') {
+        productData = productData.concat(Machines);
+      }
+      if (activeCategory === 'creation' || activeCategory === 'all') {
+        productData = productData.concat(OtherProducts);
+      }
 
       // Filter products based on selected categories
       const filtered = selectedCategories.length > 0
@@ -117,18 +114,25 @@ const ProductDisplay = ({ selectedCategories, activeCategory, onActiveCategoryCh
         <div className="sort-options">
           <span>Sort By</span>
           <div className="sort-buttons">
+          <button
+              className={`sort-button ${activeCategory === 'all' ? 'active' : ''}`}
+              onClick={() => onActiveCategoryChange('all')}
+            >
+              All
+            </button>
             <button
-              className={`sort-button ${activeCategory === 'embroidery' ? 'active' : ''}`}
-              onClick={() => onActiveCategoryChange('embroidery')}
+              className={`sort-button ${activeCategory === 'machine' ? 'active' : ''}`}
+              onClick={() => onActiveCategoryChange('machine')}
             >
               Embroidery
             </button>
             <button
-              className={`sort-button ${activeCategory === 'other-products' ? 'active' : ''}`}
-              onClick={() => onActiveCategoryChange('other-products')}
+              className={`sort-button ${activeCategory === 'creation' ? 'active' : ''}`}
+              onClick={() => onActiveCategoryChange('creation')}
             >
-              Other Products
+              Creation
             </button>
+           
           </div>
         </div>
       </div>

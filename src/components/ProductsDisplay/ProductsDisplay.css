@@ -158,4 +158,33 @@
   border-radius: 8px;
 }
 
-  
+/* Style the sort buttons container */
+.sort-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Base style for sort buttons */
+.sort-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Hover effect for sort buttons */
+.sort-button:hover {
+  background-color: #f1f1f1;
+  border-color: #bbb;
+}
+
+/* Active state for the sort button */
+.sort-button.active {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}

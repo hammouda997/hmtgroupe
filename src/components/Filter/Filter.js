@@ -1,38 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Filter.css';
 
-const FilterSidebar = ({ onCategoryChange }) => {
-  const [activeCategory, setActiveCategory] = useState(null);
+const FilterSidebar = ({ onCategoryChange, activeCategory }) => {
+  const [activeCategoryState, setActiveCategoryState] = useState(null);
+
+  const embroideryCategories = [
+    'Home Embroidery Machines',
+    'Commercial',
+    'Single-Needle',
+    'Multi-Needle',
+    'Industrial',
+  ];
+
+  const otherProductCategories = [
+    'Software',
+    'Accessories',
+    'Threads',
+    'Stabilizers',
+    'Hoops',
+  ];
+
+  const categoriesToDisplay = activeCategory === 'embroidery' ? embroideryCategories : otherProductCategories;
 
   const handleCategoryChange = (category) => {
-    const newActiveCategory = activeCategory === category ? null : category;
-    setActiveCategory(newActiveCategory);
+    const newActiveCategory = activeCategoryState === category ? null : category;
+    setActiveCategoryState(newActiveCategory);
     onCategoryChange(newActiveCategory ? [newActiveCategory] : []); 
   };
 
+  useEffect(() => {
+    setActiveCategoryState(null);
+    onCategoryChange([]);
+  }, [activeCategory, onCategoryChange]);
+
   return (
     <div className="filter-sidebar">
-      {/* <h3>Select Price Range</h3>
-      <input type="range" min="0" max="6400" step="100" />
-      <div className="price-labels">
-        <span>৳0 BDT</span>
-        <span>৳6400 BDT</span>
-      </div> */}
-
-      <h3>Product Categories</h3>
+      <h3>{activeCategory === 'embroidery' ? 'Embroidery Categories' : 'Other Product Categories'}</h3>
       <div className="categories">
-        {['Home Embroidery Machines', 'Commercial', 'Single-Needle', 'Multi-Needle', 'Industrial'].map((category) => (
+        {categoriesToDisplay.map((category) => (
           <button
             key={category}
-            className={`category-button ${activeCategory === category ? 'selected' : ''}`}
+            className={`category-button ${activeCategoryState === category ? 'selected' : ''}`}
             onClick={() => handleCategoryChange(category)}
           >
             {category}
           </button>
         ))}
       </div>
-
-      
     </div>
   );
 };

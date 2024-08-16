@@ -68,17 +68,17 @@ const Inspiration = () => {
   const totalItems = inspirations.length;
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - itemsPerPage + totalItems) % totalItems);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + itemsPerPage) % totalItems);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
   };
 
   const getVisibleItems = () => {
-    return inspirations.slice(currentIndex, currentIndex + itemsPerPage).concat(
-      inspirations.slice(0, Math.max(currentIndex + itemsPerPage - totalItems, 0))
-    );
+    const start = currentIndex;
+    const end = start + itemsPerPage;
+    return inspirations.slice(start, end).concat(inspirations.slice(0, Math.max(end - totalItems, 0)));
   };
 
   const inspirationRef = useRef(null);
@@ -95,7 +95,6 @@ const Inspiration = () => {
       });
     }, { threshold: 0.1 });
 
-    // Use a local variable to store the current value of the ref
     const currentRef = inspirationRef.current;
 
     if (currentRef) {
@@ -126,7 +125,7 @@ const Inspiration = () => {
 
       return () => clearInterval(newIntervalId);
     }
-  }, [hoveredIndex, inspirations, intervalIds]);
+  }, [hoveredIndex]);
 
   const handleMouseEnter = (index) => {
     setHoveredIndex(index);

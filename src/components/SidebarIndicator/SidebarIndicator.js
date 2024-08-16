@@ -1,82 +1,76 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SidebarIndicator.css';
 
 const SidebarIndicator = ({ sections }) => {
-  const [activeSection, setActiveSection] = useState(sections[0].id);
-  const [isHidden, setIsHidden] = useState(true);
-  const sidebarRef = useRef(null);
+  const [activeSection, setActiveSection] = useState(sections[0]?.id || '');
 
   useEffect(() => {
     const handleScroll = () => {
-      let currentSection = sections[0].id;
-      const heroSection = document.getElementById('hero-section');
-      const footerSection = document.getElementById('footer-section');
-      const scrollPosition = window.scrollY || window.pageYOffset;
-      const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const showSidebarThreshold = pageHeight * 0.01; 
-      if (heroSection && footerSection) {
-        const heroRect = heroSection.getBoundingClientRect();
-        const footerRect = footerSection.getBoundingClientRect();
+      let currentSection = '';
 
-        const isHeroVisible = heroRect.top <= window.innerHeight && heroRect.bottom > 0;
-        const isFooterVisible = footerRect.top < window.innerHeight && footerRect.bottom > 0;
-        setIsHidden(!(scrollPosition > showSidebarThreshold && !isHeroVisible && !isFooterVisible));
+      sections.forEach(section => {
+        const element = document.getElementById(section.id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const elementTop = rect.top + window.scrollY;
+          const elementBottom = rect.bottom + window.scrollY;
 
-        sections.forEach((section) => {
-          const element = document.getElementById(section.id);
-          if (element && element.getBoundingClientRect().top < window.innerHeight / 2) {
+          if (window.scrollY >= elementTop - window.innerHeight / 2 && window.scrollY < elementBottom - window.innerHeight / 2) {
             currentSection = section.id;
           }
-        });
+        }
+      });
 
-        setActiveSection(currentSection);
-      }
+      setActiveSection(currentSection);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const debounce = (func, delay) => {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => func.apply(this, args), delay);
+      };
+    };
 
-    handleScroll(); 
+    const debouncedHandleScroll = debounce(handleScroll, 100);
+    window.addEventListener('scroll', debouncedHandleScroll);
+
+    handleScroll();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', debouncedHandleScroll);
     };
   }, [sections]);
 
-  const scrollToSection = (id) => {
-    if (id === 'hero-section') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      const element = document.getElementById(id);
-      if (element) {
-        console.log(`Scrolling to ${id}`);
-  
-        const yOffset = -20; 
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-  
-        window.scrollTo({ top: y, behavior: 'smooth' });
-        
-        setActiveSection(id);
-      } else {
-        console.error(`Element with id ${id} not found`);
+  useEffect(() => {
+    const updateScrollPosition = () => {
+      const indicator = document.querySelector('.sidebar-indicator');
+      const activeItem = document.querySelector('.indicator-item.active');
+      if (indicator && activeItem) {
+        const indicatorRect = indicator.getBoundingClientRect();
+        const activeItemRect = activeItem.getBoundingClientRect();
+
+        if (activeItemRect.left < indicatorRect.left || activeItemRect.right > indicatorRect.right) {
+          indicator.scrollLeft = activeItem.offsetLeft - indicator.offsetWidth / 2 + activeItem.offsetWidth / 2;
+        }
       }
+    };
+
+    updateScrollPosition();
+  }, [activeSection]);
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(id);
     }
   };
 
-  useEffect(() => {
-    if (sidebarRef.current) {
-      const activeIndicator = sidebarRef.current.querySelector(`#sidebar-${activeSection}`);
-      if (activeIndicator) {
-        const offset = activeIndicator.offsetLeft + (activeIndicator.offsetWidth - sidebarRef.current.offsetWidth) / 2;
-        sidebarRef.current.scrollLeft = offset;
-      }
-    }
-  }, [activeSection]);
-
   return (
-    <div ref={sidebarRef} className={`sidebar-indicator ${isHidden ? 'hidden' : ''}`}>
+    <div className="sidebar-indicator">
       {sections.map((section) => (
         <div
-          id={`sidebar-${section.id}`}
           key={section.id}
           className={`indicator-item ${activeSection === section.id ? 'active' : ''}`}
           onClick={() => scrollToSection(section.id)}

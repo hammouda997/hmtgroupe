@@ -15,7 +15,7 @@ const SidebarIndicator = ({ sections }) => {
           const elementTop = rect.top + window.scrollY;
           const elementBottom = rect.bottom + window.scrollY;
 
-          if (window.scrollY >= elementTop - window.innerHeight / 2 && window.scrollY < elementBottom - window.innerHeight / 2) {
+          if (window.scrollY >= elementTop - window.innerHeight && window.scrollY < elementBottom - window.innerHeight / 2) {
             currentSection = section.id;
           }
         }

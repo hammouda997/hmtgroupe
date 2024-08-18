@@ -1,14 +1,30 @@
 .Products {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
+  overflow-x: hidden;
+}
+
+.FilterSidebar {
+  width: 250px; /* Adjust as needed */
+}
+
+.ProductDisplay {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+/* Media Query for 480px or less */
+@media screen and (max-width: 480px) {
+  .Products {
+    flex-direction: column; /* Stack the elements vertically */
   }
-  
+
   .FilterSidebar {
-    width: 250px; /* Adjust as needed */
+    width: 100%; /* Take full width of the screen */
+    margin-bottom: 20px; /* Space between filter and products */
   }
-  
+
   .ProductDisplay {
-    flex-grow: 1;
-    margin-left: 20px;
+    margin-left: 0; /* Reset margin */
   }
-  
+}

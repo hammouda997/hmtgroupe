@@ -1,3 +1,8 @@
+/* Apply box-sizing to all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* Container for the product details */
 .product-details-container {
   display: flex;
@@ -10,6 +15,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
+  overflow: hidden; /* Prevent overflow */
 }
 
 /* Left and right columns */
@@ -31,14 +37,21 @@
   position: relative;
   width: 100%; /* Image container now takes full width of left column */
   margin: 0 auto 20px auto;
-  overflow: hidden;
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Increase image size */
+.product-image {
+  width: 100%; /* Full width of its container */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 600px; /* Set a max-width for larger images */
 }
 
 /* Zoom lens styling */
 .zoom-lens {
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 60px; /* Increase lens size */
+  height: 60px; /* Increase lens size */
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 50%;
   cursor: crosshair;
@@ -51,8 +64,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%; /* Zoom level */
-  height: 200%;
+  width: 250%; /* Increase zoom level */
+  height: 250%;
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0;
@@ -85,8 +98,8 @@
 /* Grid for related machines */
 .related-machine-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
-  gap: 10px; /* Space between cards */
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Larger cards */
+  gap: 15px; /* Space between cards */
 }
 
 /* Related machine card styling */
@@ -108,4 +121,41 @@
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screens smaller than 768px (tablets and small desktops) */
+@media (max-width: 768px) {
+  .product-details-container {
+    flex-direction: column; /* Stack columns vertically */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .left-column, .right-column {
+    max-width: 100%; /* Full width on small screens */
+  }
+
+  .left-column {
+    margin-bottom: 20px; /* Add space below left column */
+  }
+
+  .right-column {
+    margin-bottom: 0; /* No space below right column */
+  }
+}
+
+/* For screens smaller than 480px (mobile phones) */
+@media (max-width: 480px) {
+  .product-info {
+    text-align: center; /* Center text on small screens */
+  }
+
+  .product-description-section, .related-machine-section {
+    padding: 15px; /* Reduce padding for small screens */
+  }
+
+  .related-machine-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust size for mobile */
+  }
 }

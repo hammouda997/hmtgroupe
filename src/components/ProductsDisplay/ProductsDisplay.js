@@ -105,10 +105,10 @@ const ProductDisplay = ({ selectedCategories, activeCategory, onActiveCategoryCh
 
     navigate('/product-details', { state: { product, relatedProducts, relatedMachines } });
   };
-  
+
   useEffect(() => {
     setLoading(true);
-    
+
     // Simulate a delay for loading products
     const timeout = setTimeout(() => {
       let productData = [];
@@ -139,9 +139,8 @@ const ProductDisplay = ({ selectedCategories, activeCategory, onActiveCategoryCh
           <button className="list-view"></button>
         </div>
         <div className="sort-options">
-          <span>Sort By</span>
           <div className="sort-buttons">
-          <button
+            <button
               className={`sort-button ${activeCategory === 'all' ? 'active' : ''}`}
               onClick={() => onActiveCategoryChange('all')}
             >
@@ -159,7 +158,6 @@ const ProductDisplay = ({ selectedCategories, activeCategory, onActiveCategoryCh
             >
               Creation
             </button>
-           
           </div>
         </div>
       </div>

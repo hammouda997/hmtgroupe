@@ -156,32 +156,42 @@
   .hero-container {
     padding: 0.5rem;
     width: 95%;
+    flex-direction: column;
+    height: auto;
   }
 
   .hero-title {
     font-size: 1.8rem;
+    margin-bottom: 0.5rem;
   }
 
   .hero-subtitle {
     font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-image-wrapper {
+    margin-top: 10px;
+    max-width: 100%;
   }
 
   .hero-image {
     height: 250px;
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 5%;
   }
 
   .shop-button {
     padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
   }
 
   .prev-btn,
   .next-btn {
     font-size: 1rem;
   }
-.hero-image{
-  margin-top: 5%;
-}
+
   .pagination {
     margin-top: 60%;
   }

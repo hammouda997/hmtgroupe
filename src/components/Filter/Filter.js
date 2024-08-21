@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './Filter.css';
+import { FaFilter, FaWindowClose } from 'react-icons/fa';
 
 const FilterSidebar = ({ onCategoryChange, activeCategory }) => {
   const [activeCategoryState, setActiveCategoryState] = useState(null);
+  const [isFilterVisible, setIsFilterVisible] = useState(false);
 
   const embroideryCategories = [
     'Home Embroidery Machines',
@@ -13,14 +15,22 @@ const FilterSidebar = ({ onCategoryChange, activeCategory }) => {
   ];
 
   const otherProductCategories = [
-    'Software',
+    'Electronics',
     'Accessories',
     'Threads',
     'Stabilizers',
     'Hoops',
   ];
 
-  const categoriesToDisplay = activeCategory === 'embroidery' ? embroideryCategories : otherProductCategories;
+  // Display all categories if activeCategory is 'all'
+  const categoriesToDisplay = 
+    activeCategory === 'machine' 
+      ? embroideryCategories 
+      : activeCategory === 'creation'
+      ? otherProductCategories 
+      : activeCategory === 'all'
+      ? [...embroideryCategories, ...otherProductCategories] // Combine both categories
+      : [];
 
   const handleCategoryChange = (category) => {
     const newActiveCategory = activeCategoryState === category ? null : category;
@@ -33,9 +43,26 @@ const FilterSidebar = ({ onCategoryChange, activeCategory }) => {
     onCategoryChange([]);
   }, [activeCategory, onCategoryChange]);
 
+  // Toggle filter visibility on small screens
+  const toggleFilterVisibility = () => {
+    setIsFilterVisible(!isFilterVisible);
+  };
+
   return (
-    <div className="filter-sidebar">
-      <h3>{activeCategory === 'embroidery' ? 'Embroidery Categories' : 'Other Product Categories'}</h3>
+    <div className={`filter-sidebar ${isFilterVisible ? 'active' : ''}`}>
+      <button 
+        className="filter-toggle-button"
+        onClick={toggleFilterVisibility}
+      >
+        {isFilterVisible ? <FaWindowClose /> : <FaFilter/>}
+      </button>
+      <h3>
+        {activeCategory === 'machine' 
+          ? 'Embroidery Categories' 
+          : activeCategory === 'creation'
+          ? 'Other Product Categories'
+          : 'All Categories'}
+      </h3>
       <div className="categories">
         {categoriesToDisplay.map((category) => (
           <button

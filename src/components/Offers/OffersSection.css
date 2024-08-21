@@ -1,52 +1,79 @@
 .deal-of-the-week {
-    width: 80%;
-    justify-content: center;
-    display: flex;
-    margin-top: 40px;
-    align-items: center;
-    padding: 20px;
-    background-color: #dadada44;
-    margin-left: 150px;
-  }
+  width: 90%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column; /* Stack content vertically on small screens */
+  align-items: center;
+  margin: 20px auto; /* Center horizontally and add margin top and bottom */
+  padding: 20px;
+  background-color: #dadada44;
+}
+
+.deal-content {
+  max-width: 100%;
+  text-align: center; /* Center text */
+}
+
+.deal-tagline {
+  font-size: 16px; /* Adjusted for smaller screens */
+  color: #000000;
+  font-weight: 800;
+}
+
+.deal-title {
+  font-size: 24px; /* Adjusted for smaller screens */
+  margin: 10px 0;
+}
+
+.deal-description {
+  font-size: 14px; /* Adjusted for smaller screens */
+  margin: 10px 0;
+}
+
+.deal-button {
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px; /* Adjusted for smaller screens */
+  margin: 20px 0; /* Centered with margin on top and bottom */
+}
+
+.deal-image img {
+  width: 100%; /* Adjusts to the width of the container */
+  height: auto; /* Maintain aspect ratio */
+}
   
+/* Media query for screens 480px or smaller */
+@media (max-width: 480px) {
+  .deal-of-the-week {
+    padding: 10px;
+  }
+
   .deal-content {
-    max-width: 50%;
-    justify-content: center;
+    max-width: 100%;
   }
-  
+
   .deal-tagline {
-    font-size: 18px;
-    color: #000000;
-    text-align: center;
-    font-weight: 800;
+    font-size: 14px;
   }
-  
+
   .deal-title {
-    font-size: 40px;
-    margin: 10px 0;
-    text-align: center;
+    font-size: 20px;
   }
-  
+
   .deal-description {
-    font-size: 16px;
-    margin: 10px 0;
-    text-align: center;
+    font-size: 12px;
   }
-  
+
   .deal-button {
-    background-color: #000000;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 220px;
-    margin-top: 30px;
+    font-size: 12px;
+    padding: 8px 16px;
   }
-  
+
   .deal-image img {
-    width: 450px;
-    height: 400px;
-    margin-left: 80px;
+    width: 100%;
+    height: auto;
   }
-  
+}

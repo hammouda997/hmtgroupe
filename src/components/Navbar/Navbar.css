@@ -1,3 +1,4 @@
+/* General Navbar Styling */
 .navbar-container {
   display: flex;
   justify-content: space-evenly;
@@ -10,7 +11,7 @@
 }
 
 .logo {
-  size: 10px;
+  font-size: 10px;
   margin-left: -10%;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -71,6 +72,7 @@
   font-size: 20px;
 }
 
+/* Sidebar Styling */
 .sidebar {
   position: fixed;
   top: 0;
@@ -124,6 +126,7 @@
   font-weight: 700;
   transition: color 0.3s ease, padding-left 0.3s ease;
 }
+
 .sidebar-links a::after {
   content: '';
   display: block;
@@ -135,16 +138,19 @@
   left: 0;
   transition: width 0.3s ease;
 }
+
 .sidebar-links a:hover,
 .sidebar-links a.active {
-  color: #f5a623; 
-  padding-left: 10px; 
+  color: #f5a623;
+  padding-left: 10px;
 }
 
 .sidebar-links a:hover::after,
 .sidebar-links a.active::after {
   width: 100%;
 }
+
+/* Overlay Styling */
 .overlay {
   position: fixed;
   top: 0;
@@ -156,6 +162,7 @@
   cursor: pointer;
 }
 
+/* Search Results Styling */
 .search-results {
   position: absolute;
   top: 100%;
@@ -165,7 +172,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
   z-index: 1000;
-  max-height: 300px; 
+  max-height: 300px;
   overflow-y: auto;
 }
 
@@ -179,7 +186,7 @@
 }
 
 .search-result-item:hover {
-  background-color: #f4f4f4; 
+  background-color: #f4f4f4;
 }
 
 .search-result-image {
@@ -197,46 +204,158 @@
 .search-result-info p {
   margin: 2px 0;
 }
+
+/* Responsive Styling */
 @media (max-width: 768px) {
   .navbar-container {
-    flex-direction: column; 
+    flex-direction: column;
     height: auto;
+    padding: 0.5rem;
+    justify-content: center;
   }
 
   .logo-img {
-    width: 120px;
+    width: 150px;
     height: auto;
   }
+
   .logo-img-sidebar {
-    width: 180px;
+    width: 150px;
     height: auto;
   }
+
   .search-container {
-    width: 100%; 
-    margin-top: 1rem; 
+    width: 100%;
+    margin-top: 1rem;
   }
 
   .icon-container {
-    margin-top: 1rem;   
+    margin-top: 1rem;
     font-size: 1.25rem;
     gap: 1rem;
   }
 
   .sidebar {
     left: 35vh;
+    top: 0;
+    width: 45vh;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+    z-index: 10000;
+  }
+
+  input:focus {
+    outline: none;
+    border: 1px solid #ccc;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    flex-direction: column;
+    height: auto;
+    padding: 0.5rem;
+    justify-content: center;
+  }
+
+  .logo-img {
+    width: 120px;
+    height: auto;
+    margin-right: 200px;
+  }
+
+  .logo-img-sidebar {
+    width: 180px;
+    height: auto;
+    margin-left: 100px;
+
+  }
+
+  .menu-icon {
+    margin-left: 280px;
+  }
+
+  .search-container {
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 40px;
+  }
+
+  .icon-container {
+    margin-top: 1rem;
+    font-size: 1rem;
+    gap: 0.5rem;
+  }
+
+  .sidebar {
     position: fixed;
+    top: 0;
+    left: 450px;
+    height: 100%;
+    width: 450px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    transform: translateX(-100%); /* Start off-screen */
+    transition: transform 0.5s ease-in-out;
+    z-index: 10000;
+  }
+  
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin-left: 5px;
+    font-size: 1.4rem;
+    margin-top: 60px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+  .sidebar-links a {
+    color: #161616;
+    text-decoration: none;
+    position: relative;
+    font-size: 2rem;
+    font-weight: 700;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+  }
+  .sidebar-links li {
+    margin: 50px 0;
+    margin-top: 30px;
+  }
+  /* Overlay Styling */
+.overlay {
+  position: fixed;
   top: 0;
-  width:  45vh;
-  background-color: #ffffff;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 900;
+  cursor: pointer;
+}
+.sidebar-links a:hover,
+.sidebar-links a.active {
+  color: #f5a623;
+  padding-left: 10px;
+}
+
+.sidebar-links a:hover::after,
+.sidebar-links a.active::after {
+  width: 100%;
+}
+.close-btn {
+  background: none;
+  border: none;
   color: #000000;
-  padding: 0px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-  z-index: 10000;
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 80px;
 }
-input:focus {
-  outline: none;
-  border: 1px solid #ccc; /* Optional */
-}
+
 }

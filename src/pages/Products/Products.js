@@ -7,7 +7,7 @@ import OffersSection from '../../components/Offers/OfferSection';
 
 function Products() {
   const [selectedCategories, setSelectedCategories] = useState([]);
-  const [activeCategory, setActiveCategory] = useState('embroidery'); // Manage activeCategory state
+  const [activeCategory, setActiveCategory] = useState('all'); // Manage activeCategory state
 
   return (
     <>

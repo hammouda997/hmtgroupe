@@ -151,7 +151,7 @@
 }
 @media (max-width: 480px) {
   .inspiration-image {
-    width: 150px;
+    width: 250px;
     height: 200px;
   }
 
@@ -166,19 +166,20 @@
     padding: 8px 12px;
     z-index: 10000;
     font-size: 0.8rem;
-
-
+    opacity: 1; /* Ensure buttons are visible */
+    visibility: visible; /* Ensure visibility */
   }
+
   .inspiration-grid {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex-direction: row;
     gap: 50px;
     overflow: hidden;
     position: relative;
   }
+
   .inspiration-container {
     margin-bottom: -80px;
   }
-  
 }

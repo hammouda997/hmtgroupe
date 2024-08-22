@@ -259,6 +259,10 @@
     padding: 0.5rem;
     justify-content: center;
   }
+  .logo {
+ 
+    margin-bottom: -50px;
+  }
 
   .logo-img {
     width: 120px;
@@ -267,20 +271,21 @@
   }
 
   .logo-img-sidebar {
-    width: 180px;
+    width: 150px;
     height: auto;
-    margin-left: 100px;
+    margin-left: 0px;
 
   }
 
   .menu-icon {
     margin-left: 280px;
+    margin-bottom: 20px;
   }
 
   .search-container {
     width: 100%;
     margin-top: 1rem;
-    margin-left: 40px;
+    margin-left: 0px;
   }
 
   .icon-container {
@@ -292,9 +297,9 @@
   .sidebar {
     position: fixed;
     top: 0;
-    left: 450px;
+    left: 250px;
     height: 100%;
-    width: 450px;
+    width: 250px;
     background-color: #ffffff;
     color: #000000;
     padding: 20px;
@@ -307,18 +312,19 @@
   .sidebar-links {
     list-style: none;
     padding: 0;
-    margin-left: 5px;
+    margin-left: -15px;
     font-size: 1.4rem;
     margin-top: 60px;
     font-weight: 700;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    color: #f5a623;
   }
   .sidebar-links a {
     color: #161616;
     text-decoration: none;
     position: relative;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     transition: color 0.3s ease, padding-left 0.3s ease;
   }
@@ -356,6 +362,7 @@
   position: absolute;
   top: 20px;
   right: 80px;
+  visibility: hidden;
 }
 
 }

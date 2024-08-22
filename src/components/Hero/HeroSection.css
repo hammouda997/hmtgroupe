@@ -19,7 +19,7 @@
   margin: 2rem auto;
   width: 80%;
   max-width: 1200px;
-  height: 480px;
+  height: 550px;
   position: relative;
   animation: zoomIn 2s ease-out;
 }
@@ -157,7 +157,13 @@
     padding: 0.5rem;
     width: 95%;
     flex-direction: column;
-    height: auto;
+    height: 530px;
+  }
+  .dot {
+    height: 9px;
+    width: 9px;
+    margin-top: 80px;
+  
   }
 
   .hero-title {

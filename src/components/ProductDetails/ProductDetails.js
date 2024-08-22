@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation  , useNavigate} from 'react-router-dom';
 import './ProductDetails.css';
 
 const Machines = [
@@ -89,6 +89,7 @@ const OtherProducts = [
 
 function ProductDescription() {
   const location = useLocation();
+  const navigate = useNavigate(); // Hook for navigation
   const { product, relatedProducts, relatedMachines } = location.state;
   const [relatedProductsState, setRelatedProductsState] = useState([]);
   const [relatedMachine, setRelatedMachine] = useState(null);
@@ -130,6 +131,9 @@ function ProductDescription() {
 
   return (
     <div className="product-details-container">
+      <button className="back-button" onClick={() => navigate('/products')}>
+        &#9664;  Back 
+      </button>
       <div className="left-column">
         <div className="Images-Container" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
           <img src={product.image} alt={product.name} className="product-image" ref={imageRef} />
@@ -139,7 +143,7 @@ function ProductDescription() {
         <div className="product-info">
           <h2 className="title">{product.name}</h2>
           <p>Category: {product.category}</p>
-          <button className="add-to-cart">Add To Cart</button>
+         
         </div>
       </div>
       <div className="right-column">

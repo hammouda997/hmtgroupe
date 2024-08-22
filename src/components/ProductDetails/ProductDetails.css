@@ -17,6 +17,25 @@
   background-color: #f9f9f9;
   overflow: hidden; /* Prevent overflow */
 }
+.back-button {
+  position: absolute;
+  top: 120px; /* Adjust as needed */
+  left: 30px; /* Adjust as needed */
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  z-index: 10; /* Ensure it is above other content */
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #444444;
+}
 
 /* Left and right columns */
 .left-column, .right-column {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';  // Using HashRouter
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/HomePage';
 import Products from './pages/Products/Products';
@@ -11,20 +11,21 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const App = () => {
   return (
-    <><Router>
-      <div>
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/aboutus" element={<AboutUsPAge />} />
-
-          </Routes>
-        </main>
-      </div>
-    </Router><Footer /></>
-
+    <>
+      <Router>  {/* Changed from BrowserRouter to HashRouter */}
+        <div>
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/aboutus" element={<AboutUsPAge />} />
+            </Routes>
+          </main>
+        </div>
+      </Router>
+      <Footer />
+    </>
   );
 };
 

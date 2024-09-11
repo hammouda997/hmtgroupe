@@ -12,7 +12,7 @@ import 'slick-carousel/slick/slick-theme.css';
 const App = () => {
   return (
     <>
-      <Router>  {/* Changed from BrowserRouter to HashRouter */}
+      <Router>  
         <div>
           <Navbar />
           <main>

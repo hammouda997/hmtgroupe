@@ -287,6 +287,12 @@ input:focus {
   background-color: lightgray;
 }
 @media (max-width: 768px) {
+  .menu-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: -48%;
+    margin-top: 2.4%;
+  }
   .logo-img {
     width: 200px;
     height: 120px;

@@ -10,7 +10,6 @@ const OffersSection = () => {
         <p className="deal-description">
           Subscribe to our Newsletter and get all the latest information and offers
         </p>
-        <button className="deal-button">Shop Now</button>
       </div>
       <div className="deal-image">
         <img src="./images/machine4.png" alt="DealImage" />

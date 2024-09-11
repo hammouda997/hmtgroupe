@@ -1,20 +1,23 @@
 import React from 'react';
 import './ContactSection.css';
+import { useTranslation } from 'react-i18next'; // Import the translation hook
 
 const ContactSection = () => {
+  const { t } = useTranslation(); // Use the translation hook
+
   return (
     <div className="contact-container">
-      <h2 className="contact-heading">Contact Us</h2>
+      <h2 className="contact-heading">{t('contactSection.heading')}</h2>
       <div className="contact-content">
         <div className="contact-info">
-          <p className="contact-text">Have questions or need help with an order? Reach out to us!</p>
+          <p className="contact-text">{t('contactSection.text')}</p>
           <p className="contact-details">
-            <strong>Email:</strong> <a href="mailto:rematex@gnet.tn">rematex@gnet.tn</a>
+            <strong>{t('contactSection.emailLabel')}:</strong> <a href="mailto:rematex@gnet.tn">rematex@gnet.tn</a>
           </p>
           <p className="contact-details">
-            <strong>Phone:</strong> <a href="tel:+21636264380">+216 36 264 380</a>
+            <strong>{t('contactSection.phoneLabel')}:</strong> <a href="tel:+21636264380">+216 36 264 380</a>
           </p>
-          <p className="contact-details">Address: 123 Embroidery Lane, Craft City, CA 12345</p>
+          <p className="contact-details">{t('contactSection.address')}: 123 Embroidery Lane, Craft City, CA 12345</p>
           <div className="map-container">
             <iframe
               title="Map"
@@ -28,10 +31,10 @@ const ContactSection = () => {
           </div>
         </div>
         <form className="contact-form">
-          <input type="text" name="name" placeholder="Your Name" className="contact-input" />
-          <input type="email" name="email" placeholder="Your Email" className="contact-input" />
-          <textarea name="message" placeholder="Your Message" className="contact-textarea"></textarea>
-          <button type="submit" className="contact-button">Send Message</button>
+          <input type="text" name="name" placeholder={t('contactSection.placeholderName')} className="contact-input" />
+          <input type="email" name="email" placeholder={t('contactSection.placeholderEmail')} className="contact-input" />
+          <textarea name="message" placeholder={t('contactSection.placeholderMessage')} className="contact-textarea"></textarea>
+          <button type="submit" className="contact-button">{t('contactSection.sendMessage')}</button>
         </form>
       </div>
     </div>

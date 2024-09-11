@@ -8,67 +8,52 @@
     opacity: 1;
   }
 }
-.collections-container {
-    position: relative;
-    text-align: center;
-    margin-bottom: 5%;
-  }
-  
-  .collections-title {
-    font-size: 45px;
-    margin-bottom: 40px;
-    font-family:Arial, Helvetica, sans-serif;
 
-  }
-  
-  .collections-navigation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .collections-grid {
-    display: flex;
-    justify-content: center;
-    gap: 50px; /* Adjust spacing between images */
-    overflow: hidden;
-  }
-  
-  .collection-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-    transform: scale(1);
-  }
-  .collection-card.visible {
-    animation: joinEffect 2s forwards;
-  }
-  
-  .collection-image {
-    width: 250px;
-    height: 300px;
-    background-color: #efefefa1;
-    padding: 2rem 3rem;
-  }
-  
-  .nav-button {
-    background-color: #303030;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    opacity: 0;
-  }
-  .collections-navigation:hover .nav-button {
-    opacity: 1;
-  }
-  
- 
+.collections-container {
+  position: relative;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.collections-title {
+  font-size: 45px;
+  margin-bottom: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.collections-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.collections-grid {
+  display: flex;
+  justify-content: center;
+  gap: 50px; /* Adjust spacing between images */
+}
+
+.collection-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  transform: scale(1);
+}
+.collection-card.visible {
+  animation: joinEffect 2s forwards;
+}
+
+.collection-image {
+  width: 250px;
+  height: 300px;
+  background-color: #efefefa1;
+  padding: 2rem 3rem;
+}
+
+/* Initially hide the buttons */
 .nav-button {
   background-color: #303030;
   color: white;
@@ -76,35 +61,38 @@
   border-radius: 5px;
   padding: 10px 15px;
   cursor: pointer;
-  font-size: 1rem; /* Responsive font size */
-  opacity: 0;
+  font-size: 1rem;
+  opacity: 0; /* Hidden by default */
   transition: opacity 0.3s ease, background-color 0.3s ease;
-}
-
-.collections-navigation:hover .nav-button {
-  opacity: 1;
-}
-
-.prev-button {
   position: absolute;
-  left: 10px; /* Adjust for small screens */
   top: 50%;
   transform: translateY(-50%);
   z-index: 1000;
 }
 
-.next-button {
-  position: absolute;
-  right: 10px; /* Adjust for small screens */
-  top: 50%;
-  transform: translateY(-50%);
+/* Show buttons on hover */
+.collections-navigation:hover .nav-button {
+  opacity: 1;
 }
+
+.nav-button:hover {
+  background-color: #505050;
+}
+
+.prev-button {
+  left: 20px; /* Positioned 20px from the left edge */
+}
+
+.next-button {
+  right: 20px; /* Positioned 20px from the right edge */
+}
+
 /* Hide navigation buttons on mobile */
 @media (max-width: 768px) {
   .nav-button {
     display: none;
   }
-  
+
   .collections-grid {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -113,8 +101,7 @@
   .collection-card {
     scroll-snap-align: start;
   }
-  
-  /* Add a hint that the collection is scrollable */
+
   .collections-grid::after {
     content: "Swipe to see more";
     font-size: 14px;
@@ -139,19 +126,18 @@
   }
 
   .nav-button {
-    opacity: 1;
+    opacity: 0; /* Initially hidden */
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    transition: opacity 0.3s ease;
   }
-  
+
   .prev-button {
-    left: 10px;
-    z-index: 1000;
+    left: 20px;
   }
 
   .next-button {
-    right: 10px;
-    z-index: 1000;
+    right: 20px;
   }
 }

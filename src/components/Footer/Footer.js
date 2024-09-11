@@ -8,13 +8,13 @@ const Footer = () => {
         <div className="footer-info">
         <img src="/images/logo3.png" alt="Logo"/>
         </div>
-        <div className="footer-quick-links">
+        {/* <div className="footer-quick-links">
           <ul>
             <li><a href="/privacy-policy" aria-label="Privacy Policy">Privacy Policy</a></li>
             <li><a href="/terms-of-service" aria-label="Terms of Service">Terms of Service</a></li>
             <li><a href="/contact-us" aria-label="Contact Us">Contact Us</a></li>
           </ul>
-        </div>
+        </div> */}
         <div className="footer-social">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <i className="fab fa-facebook-f"></i>

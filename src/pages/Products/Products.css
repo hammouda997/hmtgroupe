@@ -4,11 +4,11 @@
   }
   
   .FilterSidebar {
-    width: 250px; /* Adjust as needed */
+    width: 1%; /* Adjust as needed */
   }
   
   .ProductDisplay {
     flex-grow: 1;
-    margin-left: 20px;
+  
   }
   

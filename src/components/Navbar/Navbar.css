@@ -1,6 +1,8 @@
 .navbar-container {
   display: flex;
   justify-content: space-evenly;
+
+justify-items: "center";
   align-items: center;
   padding: 1rem;
   margin-left: 5%;
@@ -11,7 +13,8 @@
 
 .logo {
   size: 10px;
-  margin-left: -10%;
+  margin-left: -15%;
+  margin-top: 2%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -38,13 +41,15 @@
 .menu-icon {
   font-size: 1.5rem;
   cursor: pointer;
-  margin-left: -10%;
+  margin-left: -55%;
+  margin-top: 2.4%;
 }
 
 .search-container {
   position: relative;
   display: flex;
-  width: 40%;
+  width: 60%;
+  justify-content: right;
 }
 
 .search-bar {
@@ -57,7 +62,7 @@
 
 .search-icon {
   position: absolute;
-  right: 12px;
+  right: 5%;
   top: 50%;
   transform: translateY(-50%);
   color: #000000;
@@ -239,4 +244,49 @@ input:focus {
   outline: none;
   border: 1px solid #ccc; /* Optional */
 }
+}
+.language-switcher {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.language-list {
+  display: none;
+  position: absolute;
+  background-color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.language-switcher:hover .language-list {
+  display: block;
+}
+
+.language-list li {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.language-list li:hover {
+  background-color: lightgray;
+}
+@media (max-width: 768px) {
+  .logo-img {
+    width: 200px;
+    height: 120px;
+   margin-left: 10%;
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+    }
+
+.search-container
+{
+  margin-left: 30%;
+  width: 70%;
+}
+  
 }

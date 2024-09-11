@@ -2,6 +2,9 @@
   import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';
   import { useLocation, Link } from 'react-router-dom';
   import './Navbar.css';
+  import { useTranslation } from 'react-i18next';
+
+import LanguageSwitcher from './LanguageSwitcher';
 
   const products = [
     { name: 'Mini Desk Lamp', price: 99.0, originalPrice: 110.0, image: './images/machine.png', category: 'Home Embroidery Machines' },
@@ -68,7 +71,6 @@
     };
 
     const handleSearchBlur = () => {
-      // Delayed to ensure the click is processed
       setTimeout(() => {
         if (!searchContainerRef.current.contains(document.activeElement)) {
           setIsSearchFocused(false);
@@ -84,21 +86,25 @@
       );
       setFilteredProducts(results);
     };
+    const { t } = useTranslation();
 
     return (
       <div className="navbar-container">
         <div className="logo">
           <img className='logo-img' src='/images/logo3.png' alt='logo' />
         </div>
-        <FaBars className="menu-icon" onClick={toggleSidebar} />
         <div
           ref={searchContainerRef}
           className={`search-container ${isSearchFocused ? 'focused' : ''}`}
         >
+                  <FaBars className="menu-icon" onClick={toggleSidebar} />
+
+                  <LanguageSwitcher/>
+
           <input
             className="search-bar"
             type="text"
-            placeholder="Search for products"
+            placeholder={t(`searchbar`)}
             value={searchTerm}
             onChange={handleSearchChange}
             onFocus={handleSearchFocus}
@@ -113,12 +119,12 @@
                     <img src={product.image} alt={product.name} className="search-result-image" />
                     <div className="search-result-info">
                       <h3>{product.name}</h3>
-                      <p>Category: {product.category}</p>
+                      <p>{t(`category`)} {product.category}</p>
                     </div>
                   </div>
                 ))
               ) : (
-                <p>No products found</p>
+                <p>{t(`noproduct`)}</p>
               )}
             </div>
           )}
@@ -138,7 +144,7 @@
                     to="/"
                     className={location.pathname === '/' ? 'active' : ''}
                   >
-                    Home
+                    {t(`home`)}
                   </Link>
                 </li>
                 <li>
@@ -146,15 +152,15 @@
                     to="/products"
                     className={location.pathname === '/products' ? 'active' : ''}
                   >
-                    Products
-                  </Link>
+                {t(`product`)}          
+                        </Link>
                 </li>
                 <li>
                   <Link
-                    to="/about"
-                    className={location.pathname === '/about' ? 'active' : ''}
+                    to="/AboutUs"
+                    className={location.pathname === '/AboutUs' ? 'active' : ''}
                   >
-                    About
+                    {t(`aboutus`)} 
                   </Link>
                 </li>
               </ul>

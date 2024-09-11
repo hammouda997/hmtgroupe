@@ -1,0 +1,159 @@
+{
+  "aboutUs": "من نحن",
+  "welcomeMessage": "مرحبًا بكم في مجموعة HMT، شريكك الموثوق لحلول آلات النسيج.",
+  "whyChooseUs": "لماذا تختارنا؟",
+  "highQualityMachinery": "استيراد وتصدير آلات نسيج عالية الجودة",
+  "tailoredSolutions": "حلول مخصصة لتلبية احتياجات التصنيع المتنوعة",
+  "expertAdvice": "نصائح الخبراء والدعم الشامل",
+  "innovativeEquipment": "معدات التطريز والإنتاج المبتكرة",
+  "dedicatedManufacturing": "مكرس لتحسين عمليات التصنيع النسيجي الخاصة بك",
+  "services": {
+    "heading": "خدماتنا",
+    "machinesSales": {
+      "title": "بيع الآلات",
+      "description": "اكتشف مجموعتنا من الآلات عالية الجودة لمتطلبات تصنيع المنسوجات المختلفة. نساعدك في اختيار المعدات المناسبة لعملك ونضمن التسليم في الوقت المحدد إلى موقعك."
+    },
+    "embroiderySolutions": {
+      "title": "حلول التطريز",
+      "description": "نقدم إرشادات خبراء حول اختيار واستخدام آلات التطريز. عزز منتجاتك النسيجية بنصائحنا ودعمنا المهني."
+    },
+    "manufacturingSolutions": {
+      "title": "حلول التصنيع",
+      "description": "تلقى دعمًا شاملاً لمجالات مختلفة من تصنيع المنسوجات. تقدم فريقنا حلولًا مخصصة لتحسين عمليات الإنتاج الخاصة بك وزيادة الكفاءة."
+    },
+    "requestQuote": "طلب عرض أسعار"
+  },
+  "equipment": {
+    "heading": "المعدات والآلات الصناعية للنسيج والملابس",
+    "description": "استكشف مجموعتنا الواسعة من المعدات النسيجية، المصممة بدقة لتلبية جميع احتياجاتك في الحرفية والراحة والأناقة. نحن فخورون بتقديم فئات متنوعة، كل منها يعكس التزامنا الثابت بالجودة والابتكار."
+  },
+  "filter": {
+  "title": "فئات المنتجات",
+  "categories": {
+    "tracingMaterial": "مواد التتبع",
+    "quiltingAndCutting": "التنجيد والقص",
+    "sewingMachines": "ماكينات الخياطة",
+    "bondingUltrasonicMachines": "ماكينات الربط والموجات فوق الصوتية",
+    "embroideryMachines": "ماكينات التطريز",
+    "ironingFusingEquipment": "معدات الكي واللصق الحراري",
+    "washingDyeingDryingFinishing": "معدات الغسيل والصباغة والتجفيف والتشطيب",
+    "cadsSoftware": "برمجيات CAD",
+    "leatherFurniture": "الجلد والأثاث",
+    "accessories": "الإكسسوارات",
+    "spareParts": "قطع غيار"
+  }
+},
+ "categories": [
+  { "key": "tracing_material", "label": "مَواد التَتبُّع", "img": "https://www.frenchtex.org/media/cache/large_jobs_item/uploads/ckeditor/img/Metiers/French_Tex-Coupeur.jpg" },
+  { "key": "quilting_and_cutting", "label": "التَجميع والقَطع", "img": "https://img.fashion-skills.com/wp-content/uploads/sites/44/2019/02/coupeur-textile-1.jpg" },
+  { "key": "sewing_machines", "label": "آلات الخياطة", "img": "https://www.meloncollie.fr/wp-content/uploads/2020/01/meloncollie.jpg" },
+  { "key": "bonding_and_ultrasonic_machines", "label": "آلات اللصق والآلات فوق الصوتية", "img": "https://i.ytimg.com/vi/b7KhDVhIdq8/maxresdefault.jpg" },
+  { "key": "embroidery_machines", "label": "آلات التطريز", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr7TEVClBriEFWUwOvDjgGEa7KiCru9A6jvw&s" },
+  { "key": "ironing_and_fusing_equipment", "label": "معدات الكَي واللصق الحراري", "img": "https://www.apicius-shop.com/media/common/categories/repassage_1_1.jpg" },
+  { "key": "washing_dyeing_drying_finishing_equipment", "label": "معدات الغسل والصبغ والتجفيف والتشطيب", "img": "https://image.made-in-china.com/202f0j00SEbRLpfgIWkP/Washing-and-Dyeing-Machine-for-Sock-Clothes-Garment-T-Shirts.webp" },
+  { "key": "cads_software", "label": "برامج التصميم بمساعدة الحاسوب (CAD)", "img": "https://www.lectra.com/sites/default/files/styles/1050x430/public/2021-11/AM%26AN%20Header.jpg?itok=9CuylhSq" },
+  { "key": "leather_and_furniture", "label": "الجلود والأثاث", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp3PJ8GpUXnE2guMSoxchDB9lrODwxDdZi_g&s" },
+  { "key": "accessories", "label": "الإكسسوارات", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyJnCl0-KKCQHXKz9HIK38I128z9lS5dkn3w&s" },
+  { "key": "spare_parts", "label": "قطع الغيار", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz9kWUtvFHmzDk0ClHP9oRB3YALJ2753HV2g&s" }
+],
+  "hero": [
+    {
+      "subtitle": "افتح رؤيتك التصميمية",
+      "title": "تطريز متقدم لنتائج رائعة",
+      "image": "/images/robe1.png"
+    },
+    {
+      "subtitle": "رفع إمكاناتك الإبداعية",
+      "title": "تحويل الأقمشة بتكنولوجيا متطورة",
+      "image": "/images/cutmachine.png"
+    },
+    {
+      "subtitle": "حرفية استثنائية تلتقي بالابتكار",
+      "title": "اتقن فن ماكينات التطريز",
+      "image": "/images/machine.png"
+    }
+  ],
+  "buttons": {
+    "explore": "استكشاف الآن"
+  },
+  "advantages": [
+    {
+      "icon": "tools",
+      "title": "خدمة ما بعد البيع",
+      "description": "خدمة ما بعد البيع يتم توفيرها من قبل فنينا"
+    },
+    {
+      "icon": "box",
+      "title": "المخزون",
+      "description": "مخزون من الآلات وقطع الغيار متاح في مستودعنا"
+    },
+    {
+      "icon": "truck",
+      "title": "التوصيل",
+      "description": "توصيل مجاني في جميع أنحاء تونس"
+    },
+    {
+      "icon": "shieldAlt",
+      "title": "الضمان",
+      "description": "الآلات أصلية وجديدة وتأتي مع ضمان لمدة 12 شهراً ضد أي عيوب تصنيع"
+    },
+    {
+      "icon": "phone",
+      "title": "نصائح الخبراء",
+      "description": "هل لديك سؤال؟ أرسل لنا طلبك عبر البريد الإلكتروني أو الهاتف"
+    }
+  ],
+  "sections": {
+    "hero-section": "الصفحة الرئيسية",
+    "aboutus": "من نحن",
+    "services": "خدمات",
+    "equipement": "معدات",
+    "partners": "شركاؤنا",
+    "collections": "مجموعات",
+    "featured-products": "المنتجات المميزة",
+    "avantage": "المزايا",
+    "contact-section": "اتصل بنا"
+  },
+  "searchbar":"البحث عن المنتجات",
+  "category":"الفئة:",
+"noproduct":"لم يتم العثور على أي منتجات",
+"home":"الصفحة الرئيسية",
+"product":"المنتجات", 
+"aboutus":"من نحن",
+"featuredProducts": {
+  "title": "!اكتشف ما هو جديد",
+  "description": "اكتشف أحدث اتجاهات تكنولوجيا التطريز!",
+  "categories": {
+    "all": "الكل",
+    "embroidery": "التطريز",
+    "laser": "الليزر"
+  },
+  "seeAll": "عرض جميع المنتجات"
+},
+"advantagesTitle":"مميزاتنا",
+
+"contactSection": {
+  "heading": "اتصل بنا",
+  "text": "هل لديك أسئلة أو تحتاج إلى مساعدة بخصوص الطلب؟ تواصل معنا!",
+  "emailLabel": "البريد الإلكتروني",
+  "phoneLabel": "الهاتف",
+  "address": "العنوان",
+  "placeholderName": "اسمك",
+  "placeholderEmail": "بريدك الإلكتروني",
+  "placeholderMessage": "رسالتك",
+  "sendMessage": "إرسال الرسالة"
+},
+"view": "عرض",
+"sortBy": "ترتيب حسب",
+"all": "الكل",
+"machine": "آلة",
+"creation": "إنشاء",
+"noMoreProducts": "لا توجد منتجات إضافية لتحميلها",
+  "loadMore": "تحميل المزيد",
+  "loading": "... جاري التحميل",
+  "deal_of_the_week": "عرض الأسبوع",
+  "curved_collection": "مجموعة منحنية لغرفتك احصل على خصم 25%",
+  "subscribe_text": "اشترك في نشرتنا الإخبارية واحصل على أحدث المعلومات والعروض"
+
+
+}

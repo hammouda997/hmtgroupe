@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './Collections.css';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const Collections = () => {
   const collections = [
@@ -37,6 +38,7 @@ const Collections = () => {
   };
 
   const collectionRef = useRef(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -65,9 +67,11 @@ const Collections = () => {
 
   return (
     <section className="collections-container" ref={collectionRef}>
-      <h2 className="collections-title">Collections</h2>
+      <h2 className="collections-title">{t('sections.collections')}</h2>
       <div className="collections-navigation">
-        <button className="nav-button prev-button" onClick={handlePrev}><FaArrowLeft /></button>
+        <button className="nav-button prev-button" onClick={handlePrev}>
+          <FaArrowLeft />
+        </button>
         <div className="collections-grid">
           {getVisibleItems().map((item, index) => (
             <div key={index} className="collection-card">
@@ -76,7 +80,9 @@ const Collections = () => {
             </div>
           ))}
         </div>
-        <button className="nav-button next-button" onClick={handleNext}><FaArrowRight /></button>
+        <button className="nav-button next-button" onClick={handleNext}>
+          <FaArrowRight />
+        </button>
       </div>
     </section>
   );

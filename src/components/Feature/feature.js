@@ -1,35 +1,37 @@
 import React from 'react';
 import './FeaturedProducts.css';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const FeaturedProducts = () => {
+  const { t } = useTranslation(); // Import translation hook
   const products = [
     {
       name: 'Automatic Flat Bed Knitting Machine',
       price: '99.0 USD',
       oldPrice: '118.0 BDT',
       image: 'images/flat_bed_knitting_machine.png',
-      category: 'Embroidery',
+      category: 'Embroidery', // Keep this in English
     },
     {
       name: 'Industrial Sewing Machine',
       price: '345.0 USD',
       oldPrice: '380.0 BDT',
       image: 'images/machine2.png',
-      category: 'Laser',
+      category: 'Laser', // Keep this in English
     },
     {
       name: 'Multi-Needle Quilting Machine',
       price: '29.99 USD',
       oldPrice: '40.0 BDT',
       image: 'images/quilting_machine.png',
-      category: 'Embroidery',
+      category: 'Embroidery', // Keep this in English
     },
     {
       name: 'High-Speed Overlock Machine',
       price: '2567.0 USD',
       image: 'images/machine.png',
-      category: 'Laser',
+      category: 'Laser', // Keep this in English
     },
   ];
 
@@ -39,25 +41,31 @@ const FeaturedProducts = () => {
     navigate('/products');
   };
 
-  const categories = ['All', 'Embroidery', 'Laser'];
+  const categories = [
+    { key: 'all', label: t('featuredProducts.categories.all') },
+    { key: 'Embroidery', label: t('featuredProducts.categories.embroidery') },
+    { key: 'Laser', label: t('featuredProducts.categories.laser') },
+  ];
 
-  const [selectedCategory, setSelectedCategory] = React.useState('All');
+  const [selectedCategory, setSelectedCategory] = React.useState('all');
 
-  const filteredProducts = selectedCategory === 'All' ? products : products.filter(product => product.category === selectedCategory);
+  const filteredProducts = selectedCategory === 'all'
+    ? products
+    : products.filter((product) => product.category === selectedCategory);
 
   return (
     <div className="featured-products_home">
-      <h2>See What's New!</h2>
-      <p>Discover the Cutting-Edge Trends in Embroidery Technology!</p>
+      <h2>{t('featuredProducts.title')}</h2>
+      <p>{t('featuredProducts.description')}</p>
 
       <div className="category-buttons_home">
         {categories.map((category, index) => (
           <button
             key={index}
-            className={`category-button_home ${selectedCategory === category ? 'active' : ''}`}
-            onClick={() => setSelectedCategory(category)}
+            className={`category-button_home ${selectedCategory === category.key ? 'active' : ''}`}
+            onClick={() => setSelectedCategory(category.key)}
           >
-            {category}
+            {category.label}
           </button>
         ))}
       </div>
@@ -78,9 +86,8 @@ const FeaturedProducts = () => {
         ))}
       </div>
 
-      {/* See All Button */}
       <button className="see-all_home" onClick={handleSeeAllClick}>
-        See All Products
+        {t('featuredProducts.seeAll')}
       </button>
     </div>
   );

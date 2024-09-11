@@ -20,7 +20,17 @@
 .service-item {
   width: 300px;
   text-align: left;
+  background-color: #fff; /* White background to simulate a card */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow to elevate the card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
 }
+
+.service-item:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
 
 .service-image {
   width: 100%;

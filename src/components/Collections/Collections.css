@@ -9,6 +9,7 @@
   }
 }
 
+
 .collections-container {
   position: relative;
   text-align: center;
@@ -94,8 +95,12 @@
   }
 
   .collections-grid {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    display: flex;
+    flex-direction: row; /* Keep the layout */
+    align-items: center;
+    gap: 50px; /* Adjust spacing between items */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to items while scrolling */
   }
 
   .collection-card {
@@ -141,3 +146,4 @@
     right: 20px;
   }
 }
+

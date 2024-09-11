@@ -6,69 +6,69 @@
 
 import LanguageSwitcher from './LanguageSwitcher';
 
-  const products = [
-    { name: 'Mini Desk Lamp', price: 99.0, originalPrice: 110.0, image: './images/machine.png', category: 'Home Embroidery Machines' },
-    { name: 'Dome Pendant', price: 345.0, originalPrice: 380.0, image: './images/machine2.png', category: 'Commercial' },
-    { name: 'Novelty Pendant', price: 780.0, originalPrice: 820.0, image: './images/machine3.png', category: 'Single-Needle' },
-    {
-      name: 'Automatic Flat Bed Knitting Machine',
-      oldPrice: '118.0 BDT',
-      image: 'images/flat_bed_knitting_machine.png',
-      category: 'Embroidery',
-    },
-    {
-      name: 'Industrial Sewing Machine',
-      oldPrice: '380.0 BDT',
-      image: 'images/machine2.png',
-      category: 'Laser',
-    },
-    {
-      name: 'Multi-Needle Quilting Machine',
-      oldPrice: '40.0 BDT',
-      image: 'images/quilting_machine.png',
-      category: 'Embroidery',
-    },
-    {
-      name: 'High-Speed Overlock Machine',
-      image: 'images/machine.png',
-      category: 'Laser',
-    },
-  ];
+const products = [
+  { name: 'Mini Desk Lamp', price: 99.0, originalPrice: 110.0, image: './images/machine.png', category: 'Home Embroidery Machines' },
+  { name: 'Dome Pendant', price: 345.0, originalPrice: 380.0, image: './images/machine2.png', category: 'Commercial' },
+  { name: 'Novelty Pendant', price: 780.0, originalPrice: 820.0, image: './images/machine3.png', category: 'Single-Needle' },
+  {
+    name: 'Automatic Flat Bed Knitting Machine',
+    oldPrice: '118.0 BDT',
+    image: 'images/flat_bed_knitting_machine.png',
+    category: 'Embroidery',
+  },
+  {
+    name: 'Industrial Sewing Machine',
+    oldPrice: '380.0 BDT',
+    image: 'images/machine2.png',
+    category: 'Laser',
+  },
+  {
+    name: 'Multi-Needle Quilting Machine',
+    oldPrice: '40.0 BDT',
+    image: 'images/quilting_machine.png',
+    category: 'Embroidery',
+  },
+  {
+    name: 'High-Speed Overlock Machine',
+    image: 'images/machine.png',
+    category: 'Laser',
+  },
+];
 
-  const Navbar = () => {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const [searchTerm, setSearchTerm] = useState('');
-    const [filteredProducts, setFilteredProducts] = useState(products);
-    const [isSearchFocused, setIsSearchFocused] = useState(false);
-    const searchContainerRef = useRef(null);
-    const location = useLocation(); // Access current location
+const Navbar = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredProducts, setFilteredProducts] = useState(products);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const searchContainerRef = useRef(null);
+  const location = useLocation(); // Access current location
 
-    useEffect(() => {
-      const handleClickOutside = (event) => {
-        if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
-          setIsSearchFocused(false);
-        }
-      };
-
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }, []);
-
-    const toggleSidebar = () => {
-      setIsSidebarOpen(prevState => !prevState);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
+        setIsSearchFocused(false);
+      }
     };
 
-    const handleSearchChange = (e) => {
-      const term = e.target.value;
-      setSearchTerm(term);
-      filterProducts(term);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
     };
+  }, []);
 
-    const handleSearchFocus = () => {
-      setIsSearchFocused(true);
-    };
+  const toggleSidebar = () => {
+    setIsSidebarOpen(prevState => !prevState);
+  };
+
+  const handleSearchChange = (e) => {
+    const term = e.target.value;
+    setSearchTerm(term);
+    filterProducts(term);
+  };
+
+  const handleSearchFocus = () => {
+    setIsSearchFocused(true);
+  };
 
     const handleSearchBlur = () => {
       setTimeout(() => {
@@ -172,4 +172,4 @@ import LanguageSwitcher from './LanguageSwitcher';
     );
   };
 
-  export default Navbar;
+export default Navbar;

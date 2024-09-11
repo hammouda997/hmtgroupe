@@ -41,7 +41,7 @@
 }
 
 .inspiration-image {
-  width: 250px;
+  width: 350px;
   height: 300px;
   padding: 2rem 3rem;
 }
@@ -65,7 +65,7 @@
   text-align: center;
   transition: background-color 0.3s ease;
   display: flex;
-  height: 20%;
+  height: 10%;
   align-items: center;
   justify-content: center;
   margin-bottom: 100px;
@@ -148,4 +148,38 @@
 
 .dot-insp:hover {
  cursor: pointer;
+}
+@media (max-width: 480px) {
+  .inspiration-image {
+    width: 250px;
+    height: 200px;
+  }
+
+  .details-button {
+    width: 100px;
+    font-size: 12px;
+    height: 50px;
+  }
+
+  .insp-prev-button,
+  .insp-next-button {
+    padding: 8px 12px;
+    z-index: 10000;
+    font-size: 0.8rem;
+    opacity: 1; /* Ensure buttons are visible */
+    visibility: visible; /* Ensure visibility */
+  }
+
+  .inspiration-grid {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .inspiration-container {
+    margin-bottom: -80px;
+  }
 }

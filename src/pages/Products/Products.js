@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import ProductDisplay from '../../components/ProductsDisplay/ProductsDisplay';
 import FilterSidebar from '../../components/Filter/Filter';
 import '../Products/Products.css';
+import '../Products/Products.css';
 import OffersSection from '../../components/Offers/OfferSection';
 
 const allCategories = [

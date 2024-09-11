@@ -1,0 +1,180 @@
+/* Apply box-sizing to all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Container for the product details */
+.product-details-container {
+  display: flex;
+  flex-direction: row; /* Change to row for side-by-side layout */
+  justify-content: space-between;
+  width: 100%; /* Adjust width */
+  max-width: 1200px; /* Adjust max width as needed */
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  overflow: hidden; /* Prevent overflow */
+}
+.back-button {
+  position: absolute;
+  top: 120px; /* Adjust as needed */
+  left: 30px; /* Adjust as needed */
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  z-index: 10; /* Ensure it is above other content */
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #444444;
+}
+
+/* Left and right columns */
+.left-column, .right-column {
+  flex: 1; /* Take up equal space */
+  margin: 10px;
+}
+
+.left-column {
+  max-width: 60%; /* Set width for left column */
+}
+
+.right-column {
+  max-width: 40%; /* Set width for right column */
+}
+
+/* Image container styling */
+.Images-Container {
+  position: relative;
+  width: 100%; /* Image container now takes full width of left column */
+  margin: 0 auto 20px auto;
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Increase image size */
+.product-image {
+  width: 100%; /* Full width of its container */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 600px; /* Set a max-width for larger images */
+}
+
+/* Zoom lens styling */
+.zoom-lens {
+  position: absolute;
+  width: 60px; /* Increase lens size */
+  height: 60px; /* Increase lens size */
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  cursor: crosshair;
+  pointer-events: none;
+  border: 2px solid #fff;
+}
+
+/* Zoomed image styling */
+.zoomed-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250%; /* Increase zoom level */
+  height: 250%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+/* Show zoomed image on hover */
+.zoomed-image.show {
+  opacity: 1;
+}
+
+/* Description section styling */
+.product-description-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Related machine section styling */
+.related-machine-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid for related machines */
+.related-machine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Larger cards */
+  gap: 15px; /* Space between cards */
+}
+
+/* Related machine card styling */
+.related-machine-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.related-machine-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.related-machine-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screens smaller than 768px (tablets and small desktops) */
+@media (max-width: 768px) {
+  .product-details-container {
+    flex-direction: column; /* Stack columns vertically */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .left-column, .right-column {
+    max-width: 100%; /* Full width on small screens */
+  }
+
+  .left-column {
+    margin-bottom: 20px; /* Add space below left column */
+  }
+
+  .right-column {
+    margin-bottom: 0; /* No space below right column */
+  }
+}
+
+/* For screens smaller than 480px (mobile phones) */
+@media (max-width: 480px) {
+  .product-info {
+    text-align: center; /* Center text on small screens */
+  }
+
+  .product-description-section, .related-machine-section {
+    padding: 15px; /* Reduce padding for small screens */
+  }
+
+  .related-machine-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust size for mobile */
+  }
+}

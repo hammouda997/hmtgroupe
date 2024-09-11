@@ -20,6 +20,7 @@ const categories = [
 ];
 
 const ProductDisplay = ({ selectedCategories, activeCategory, onActiveCategoryChange }) => {
+const ProductDisplay = ({ selectedCategories, activeCategory, onActiveCategoryChange }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [displayedProducts, setDisplayedProducts] = useState([]);
   const [loading, setLoading] = useState(true);

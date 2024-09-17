@@ -19,6 +19,7 @@
 
 .service-item {
   width: 300px;
+  padding: 1.5%;
   text-align: left;
   background-color: #fff; /* White background to simulate a card */
   border-radius: 12px; /* Rounded corners */

@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# HMT Groupe Landing Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Visit HMT Groupe](https://hmtgroupe.com/)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+As the developer of HMT Groupe's online presence, I’ve built this landing page to serve as an intuitive and efficient gateway to their textile machinery business. Specializing in **embroidery machines**, **sewing machines**, and **quilting machines**, this website introduces visitors to HMT Groupe's extensive range of products and services. The design highlights their dedication to providing high-quality machinery and excellent customer service, including **free delivery in Tunisia** and **after-sales support**.
 
-### `npm start`
+## Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Modern Design**: A clean, professional, and user-friendly interface that showcases the core services and products offered by HMT Groupe.
+- **Responsive Layout**: The website features a fully responsive design, ensuring seamless viewing experiences across desktops, tablets, and mobile devices.
+- **Contact Form**: A simple and effective contact form allows potential clients to easily reach out with inquiries or requests for further information.
+- **Product Overview**: Clear and concise descriptions of the textile machinery available, including embroidery machines, sewing machines, and quilting machines.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **React**: A powerful JavaScript library used to create the dynamic user interface.
+- **HTML5**: Provides a semantic and well-structured foundation for the website.
+- **CSS3**: Custom styles enhance the user experience with a modern and responsive design.
+- **JavaScript**: Adds interactivity and enhances the overall functionality of the website.
+- **LiteSpeed Hosting**: The site is hosted on a high-performance **LiteSpeed** server, ensuring fast loading speeds and optimized performance.
+- **cPanel Management**: I manage the site’s deployment and maintenance through **cPanel**, providing a robust and reliable hosting environment.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Hosting and Performance
 
-### `npm run build`
+HMT Groupe’s website is hosted on **LiteSpeed Technology** for optimal speed and performance. LiteSpeed's cutting-edge server technology ensures the website loads quickly and remains stable under high traffic. The hosting is managed via **cPanel**, allowing for seamless updates, secure backups, and smooth scaling of the infrastructure.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## License
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.

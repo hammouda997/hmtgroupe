@@ -36,6 +36,6 @@ jobs:
          lftp -c "
           set ssl:verify-certificate no;
           open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
-          mirror -R ./build .;
+          mirror -R ./dist .;
           bye
           "

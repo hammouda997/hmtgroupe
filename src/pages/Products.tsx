@@ -186,38 +186,37 @@ features: [
       title: "Découpe Laser",
       icon: Scissors,
       products: [
-        {
-          name: "Machine de gravure et de découpe laser pour l'industrie du vêtement",
-          power: "50 W, 60 W, 80 W, 100 W",
+//         {
+//           name: "Machine de gravure et de découpe laser pour l'industrie du vêtement",
+//           power: "50 W, 60 W, 80 W, 100 W",
 
-          description: "Solution compacte pour la gravure et la découpe précises sur textiles et matériaux souples.",
-          features: [ "Zone de gravure : 1300×900 mm, 1500×900 mm",
-                      "Puissance du laser : 50 W, 60 W, 80 W, 100 W",
-                      "Vitesse de gravure : 1000 mm/s",
-                      "Vitesse de découpe : 600 mm/s",
-                      "Caractère minimal façonnable : Caractère chinois 2×2 mm, lettre 1×1 mm",
-                      "Résolution : ≤ 4000 dpi",
-                      "Alimentation électrique : AC 220V ±10 %, 50Hz",
-                     "Précision de positionnement : < 0,01 mm",
-                      "Puissance totale : < 1500 W",
-                     "Température de fonctionnement : 5–95 %",
-                    "Formats graphiques pris en charge : BMP, GIF, JPEG, PCX, TGA, TIFF, PLT, CDR, DMG, DXF",
-                     "Connexion directe possible avec le logiciel de CAO pour vêtements (Garment CAD)"
-                    ],
-          applications: ["Textile", "Métal", "Plastique"],
+//           description: "Solution compacte pour la gravure et la découpe précises sur textiles et matériaux souples.",
+//           features: [ "Zone de gravure : 1300×900 mm, 1500×900 mm",
+//                       "Puissance du laser : 50 W, 60 W, 80 W, 100 W",
+//                       "Vitesse de gravure : 1000 mm/s",
+//                       "Vitesse de découpe : 600 mm/s",
+//                       "Caractère minimal façonnable : Caractère chinois 2×2 mm, lettre 1×1 mm",
+//                       "Résolution : ≤ 4000 dpi",
+//                       "Alimentation électrique : AC 220V ±10 %, 50Hz",
+//                      "Précision de positionnement : < 0,01 mm",
+//                       "Puissance totale : < 1500 W",
+//                      "Température de fonctionnement : 5–95 %",
+//                     "Formats graphiques pris en charge : BMP, GIF, JPEG, PCX, TGA, TIFF, PLT, CDR, DMG, DXF",
+//                      "Connexion directe possible avec le logiciel de CAO pour vêtements (Garment CAD)"
+//                     ],
+//           applications: ["Textile", "Métal", "Plastique"],
 
-          image: "lazervetement0.jpg",
-            resultImages: [
-  "/images/echant1.jpg",
-  "/images/echant2.jpg"
-],
-        },
+//           image: "lazervetement0.jpg",
+//             resultImages: [
+//   "/images/echant1.jpg",
+//   "/images/echant2.jpg"
+// ],
+//         },
 {
   name: "Machine de gravure laser pour tampons",
   power: "40 W",
   description: "Graveuse laser compacte idéale pour la fabrication de tampons, objets artisanaux et petites pièces décoratives sur matériaux non métalliques.",
   features: [
-    "Modèles disponibles : BARUTEX-40A (150×200 mm), BARUTEX-40B (220×200 mm)",
     "Puissance du laser : 40 W",
     "Type de laser : Tube laser CO2 scellé",
     "Vitesse de gravure : 0–200 mm/s",

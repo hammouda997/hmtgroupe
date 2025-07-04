@@ -240,7 +240,7 @@ features: [
     "Verre organique (plexiglas)",
     "Textile"
   ],
-  image: "/laserstamp.jpeg",
+  image: "/laserstamp1.jpeg",
   resultImages: [
   "/images/laser-engraving-acrylic-stamps.jpg",
   "/images/images.jpeg"

@@ -1,73 +1,31 @@
-# Welcome to your Lovable project
+# HMT Groupe Landing Page
 
-## Project info
+[Visit HMT Groupe](https://hmtgroupe.com/)
 
-**URL**: https://lovable.dev/projects/11166c67-4a79-4f22-9691-629947f1e649
+## Overview
 
-## How can I edit this code?
+As the developer of HMT Groupe's online presence, I’ve built this landing page to serve as an intuitive and efficient gateway to their textile machinery business. Specializing in **embroidery machines**, **sewing machines**, and **quilting machines**, this website introduces visitors to HMT Groupe's extensive range of products and services. The design highlights their dedication to providing high-quality machinery and excellent customer service, including **free delivery in Tunisia** and **after-sales support**.
 
-There are several ways of editing your application.
+## Key Features
 
-**Use Lovable**
+- **Modern Design**: A clean, professional, and user-friendly interface that showcases the core services and products offered by HMT Groupe.
+- **Responsive Layout**: The website features a fully responsive design, ensuring seamless viewing experiences across desktops, tablets, and mobile devices.
+- **Contact Form**: A simple and effective contact form allows potential clients to easily reach out with inquiries or requests for further information.
+- **Product Overview**: Clear and concise descriptions of the textile machinery available, including embroidery machines, sewing machines, and quilting machines.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/11166c67-4a79-4f22-9691-629947f1e649) and start prompting.
+## Technologies Used
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React**: A powerful JavaScript library used to create the dynamic user interface.
+- **HTML5**: Provides a semantic and well-structured foundation for the website.
+- **CSS3**: Custom styles enhance the user experience with a modern and responsive design.
+- **JavaScript**: Adds interactivity and enhances the overall functionality of the website.
+- **LiteSpeed Hosting**: The site is hosted on a high-performance **LiteSpeed** server, ensuring fast loading speeds and optimized performance.
+- **cPanel Management**: I manage the site’s deployment and maintenance through **cPanel**, providing a robust and reliable hosting environment.
 
-**Use your preferred IDE**
+## Hosting and Performance
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+HMT Groupe’s website is hosted on **LiteSpeed Technology** for optimal speed and performance. LiteSpeed's cutting-edge server technology ensures the website loads quickly and remains stable under high traffic. The hosting is managed via **cPanel**, allowing for seamless updates, secure backups, and smooth scaling of the infrastructure.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## License
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/11166c67-4a79-4f22-9691-629947f1e649) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.

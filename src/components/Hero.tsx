@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Zap, Award, Users } from "lucide-react";
+import { TranslatedText } from "@/components/TranslatedText";
 
 const Hero = () => {
   return (
@@ -16,11 +17,13 @@ const Hero = () => {
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
                 Powering Precision with
-                <span className="text-red-500 block">Innovation</span>
+                <span className="text-red-500 block">
+                  <TranslatedText as="span">Innovation</TranslatedText>
+                </span>
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed">
-                HMT Sarl, votre partenaire de confiance pour les solutions de marquage laser, 
-                découpe laser et impression numérique en Tunisie. Excellence technique garantie.
+                <span>HMT Sarl, <TranslatedText as="span">votre partenaire de confiance pour les solutions de marquage laser, 
+                découpe laser et impression numérique en Tunisie. Excellence technique garantie.</TranslatedText>
               </p>
             </div>
 
@@ -31,21 +34,27 @@ const Hero = () => {
                   <Zap className="h-6 w-6" />
                 </div>
                 <div className="text-2xl font-bold">15+</div>
-                <div className="text-sm text-gray-400">Années d'expérience</div>
+                <div className="text-sm text-gray-400">
+                  <TranslatedText as="span">Années d'expérience</TranslatedText>
+                </div>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center w-12 h-12 bg-red-600 rounded-lg mx-auto mb-2">
                   <Users className="h-6 w-6" />
                 </div>
                 <div className="text-2xl font-bold">500+</div>
-                <div className="text-sm text-gray-400">Clients satisfaits</div>
+                <div className="text-sm text-gray-400">
+                  <TranslatedText as="span">Clients satisfaits</TranslatedText>
+                </div>
               </div>
               <div className="text-center">
                 <div className="flex items-center justify-center w-12 h-12 bg-red-600 rounded-lg mx-auto mb-2">
                   <Award className="h-6 w-6" />
                 </div>
                 <div className="text-2xl font-bold">3</div>
-                <div className="text-sm text-gray-400">Partenaires premium</div>
+                <div className="text-sm text-gray-400">
+                  <TranslatedText as="span">Partenaires premium</TranslatedText>
+                </div>
               </div>
             </div>
 
@@ -53,13 +62,13 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white" asChild>
                 <Link to="/products">
-                  Nos Produits
+                  <TranslatedText as="span">Nos Produits</TranslatedText>
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900" asChild>
+              <Button size="lg" variant="outline" className="border-white text-gray-900 bg-white hover:bg-gray-100 hover:text-gray-900" asChild>
                 <Link to="/contact">
-                  Demander un Devis
+                  <TranslatedText as="span">Demander un Devis</TranslatedText>
                 </Link>
               </Button>
             </div>
@@ -73,8 +82,12 @@ const Hero = () => {
                   <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Zap className="h-12 w-12" />
                   </div>
-                  <div className="text-2xl font-bold">HMT Technology</div>
-                  <div className="text-lg opacity-90">Precision Engineering</div>
+                  <div className="text-2xl font-bold">
+                    HMT Technology
+                  </div>
+                  <div className="text-lg opacity-90">
+                    <TranslatedText as="span">Precision Engineering</TranslatedText>
+                  </div>
                 </div>
               </div>
             </div>

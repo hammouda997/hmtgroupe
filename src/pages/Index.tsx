@@ -1,16 +1,16 @@
 
-import Hero from "@/components/Hero";
-import ProductShowcase from "@/components/ProductShowcase";
+import CMSHero from "@/components/CMSHero";
+import CMSProductShowcase from "@/components/CMSProductShowcase";
 import Partners from "@/components/Partners";
-import ServicesOverview from "@/components/ServicesOverview";
+import CMSServicesOverview from "@/components/CMSServicesOverview";
 import ContactCTA from "@/components/ContactCTA";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Hero />
-      <ProductShowcase />
-      <ServicesOverview />
+      <CMSHero />
+      <CMSProductShowcase />
+      <CMSServicesOverview />
       <Partners />
       <ContactCTA />
     </div>

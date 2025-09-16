@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Zap, Scissors, Printer, Download, Eye, X as CloseIcon } from "lucide-react";
+import { useCompany } from "@/hooks/useCMS";
+import { useQuery } from "@tanstack/react-query";
+import { cmsAPI } from "@/lib/cms-api";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { useState, useMemo } from "react";
@@ -13,6 +16,7 @@ import {
   Tag,
   SlidersHorizontal
 } from "lucide-react";
+import { TranslatedText } from "@/components/TranslatedText";
 
 
 
@@ -20,10 +24,50 @@ import {
 
 const Products = () => {
   const [openVideo, setOpenVideo] = useState<string | null>(null);
-   const [filterOpen, setFilterOpen] = useState(false);
+  const { data: company } = useCompany();
+  const { data: products, isLoading: productsLoading } = useQuery({
+    queryKey: ['products'],
+    queryFn: cmsAPI.getProducts
+  });
+  const [filterOpen, setFilterOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [appFilter, setAppFilter] = useState<string | null>(null); 
-  const productCategories = [
+  // Organize products by category
+  const organizedProducts = useMemo(() => {
+    if (!products?.data) return [];
+    
+    const categories = {
+      "laser-marking": {
+        id: "laser-marking",
+        title: "Machine à broderie",
+        icon: Zap,
+        products: []
+      },
+      "laser-cutting": {
+        id: "laser-cutting", 
+        title: "Découpe Laser",
+        icon: Scissors,
+        products: []
+      },
+      "digital-printing": {
+        id: "digital-printing",
+        title: "Machine d'impression",
+        icon: Printer,
+        products: []
+      }
+    };
+
+    products.data.forEach((product: any) => {
+      if (categories[product.category as keyof typeof categories]) {
+        categories[product.category as keyof typeof categories].products.push(product);
+      }
+    });
+
+    return Object.values(categories).filter(cat => cat.products.length > 0);
+  }, [products]);
+
+  // Fallback to hardcoded data if CMS data is not available
+  const productCategories = organizedProducts.length > 0 ? organizedProducts : [
     {
       id: "laser-marking",
       title: "Machine à broderie",
@@ -370,10 +414,11 @@ features: [
       <section className="py-20 bg-gradient-to-br from-gray-900 to-red-900 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">Nos Produits</h1>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+              <TranslatedText as="span">{(company?.pages?.products?.heroTitle as Record<string, string>)?.[ (navigator.language || 'fr').startsWith('en') ? 'en' : 'fr' ] || 'Nos Produits'}</TranslatedText>
+            </h1>
             <p className="text-xl leading-relaxed opacity-90">
-              Découvrez notre gamme complète de solutions technologiques avancées, 
-              conçues pour répondre aux exigences les plus strictes de l'industrie moderne.
+              <TranslatedText as="span">{(company?.pages?.products?.heroSubtitle as Record<string, string>)?.[ (navigator.language || 'fr').startsWith('en') ? 'en' : 'fr' ] || "Découvrez notre gamme complète de solutions technologiques avancées, conçues pour répondre aux exigences les plus strictes de l'industrie moderne."}</TranslatedText>
             </p>
           </div>
         </div>
@@ -386,7 +431,9 @@ features: [
         <div className="container mx-auto px-4">
                     {/* Header: Title + Filter Toggle */}
           <div className="flex flex-col lg:flex-row justify-between items-center mb-8 gap-4">
-            <h2 className="text-3xl font-bold">Catalogue Machines</h2>
+            <h2 className="text-3xl font-bold">
+              <TranslatedText as="span">Catalogue Machines</TranslatedText>
+            </h2>
             <Button
   onClick={() => setFilterOpen(o => !o)}
   className={`flex items-center space-x-2 px-4 py-2 rounded-full text-white shadow-lg transition-transform
@@ -395,7 +442,7 @@ features: [
 >
   <SlidersHorizontal className="w-5 h-5" />
   <span className="font-medium">
-    {filterOpen ? "Fermer les filtres" : "Afficher les filtres"}
+    <TranslatedText as="span">{filterOpen ? "Fermer les filtres" : "Afficher les filtres"}</TranslatedText>
   </span>
 </Button>
           </div>
@@ -404,7 +451,7 @@ features: [
             <TabsList className="grid w-full grid-cols-3 mb-12">
               {productCategories.map(cat => (
                 <TabsTrigger key={cat.id} value={cat.id} className="flex items-center space-x-2">
-                  <cat.icon className="h-5 w-5" /> <span>{cat.title}</span>
+                  <cat.icon className="h-5 w-5" /> <span><TranslatedText as="span">{cat.title}</TranslatedText></span>
                 </TabsTrigger>
               ))}
             </TabsList>
@@ -413,9 +460,11 @@ features: [
               <TabsContent key={cat.id} value={cat.id}>
                 <div className="mb-6">
                   <h3 className="text-2xl font-semibold flex items-center space-x-2">
-                    <cat.icon className="text-red-600" /> <span>{cat.title}</span>
+                    <cat.icon className="text-red-600" /> <span><TranslatedText as="span">{cat.title}</TranslatedText></span>
                   </h3>
-                  <p className="text-gray-600">Solutions professionnelles de {cat.title.toLowerCase()} à la pointe de la technologie.</p>
+                  <p className="text-gray-600">
+                    <TranslatedText as="span">Solutions professionnelles de {cat.title.toLowerCase()} à la pointe de la technologie.</TranslatedText>
+                  </p>
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-8">
@@ -428,9 +477,11 @@ features: [
                       <div className="aspect-video overflow-hidden">
                          <img
                            src={
-                            product.image.startsWith("http") || product.image.includes("unsplash.com")
-                            ? product.image
-                            : `/images/${product.image}`
+                            // Handle CMS data structure (images.main) or hardcoded data (image)
+                            (product.images?.main || product.image)?.startsWith("http") || 
+                            (product.images?.main || product.image)?.includes("unsplash.com")
+                            ? (product.images?.main || product.image)
+                            : `/images/${product.images?.main || product.image}`
                              }
                            alt={product.name}
                           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
@@ -440,7 +491,9 @@ features: [
                       <CardHeader>
                         <div className="flex justify-between items-start">
                           <div>
-                            <CardTitle className="text-xl text-gray-900">{product.name}</CardTitle>
+                            <CardTitle className="text-xl text-gray-900">
+                              <TranslatedText as="span">{product.name}</TranslatedText>
+                            </CardTitle>
                             <Badge variant="secondary" className="mt-2">{product.power}</Badge>
                           </div>
                         </div>
@@ -452,44 +505,50 @@ features: [
                       </CardHeader>
                       <CardContent className="space-y-6">
                         <div>
-                          <h4 className="font-semibold text-gray-900 mb-3">Caractéristiques :</h4>
+                          <h4 className="font-semibold text-gray-900 mb-3">
+                            <TranslatedText as="span">Caractéristiques :</TranslatedText>
+                          </h4>
                           <ul className="space-y-2">
                             {product.features.map((feature, idx) => (
                               <li key={idx} className="flex items-center text-sm text-gray-700">
                                 <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
-                                {feature}
+                                <TranslatedText as="span">{feature}</TranslatedText>
                               </li>
                             ))}
                           </ul>
                         </div>
                         
                         <div>
-                          <h4 className="font-semibold text-gray-900 mb-3">Applications :</h4>
+                          <h4 className="font-semibold text-gray-900 mb-3">
+                            <TranslatedText as="span">Applications :</TranslatedText>
+                          </h4>
                           <div className="flex flex-wrap gap-2">
                             {product.applications.map((app, idx) => (
                               <Badge key={idx} variant="outline" className="text-xs">
-                                {app}
+                                <TranslatedText as="span">{app}</TranslatedText>
                               </Badge>
                             ))}
                           </div>
                         </div>
-                       {product.resultImages && product.resultImages.length > 0 && (
+                       {(product.images?.resultImages || product.resultImages) && (product.images?.resultImages || product.resultImages).length > 0 && (
                        <div className="pt-6">
                         <h4 className="text-base font-semibold text-gray-800 mb-4 uppercase tracking-wide border-b pb-1">
-                          Exemples de réalisation
+                          <TranslatedText as="span">Exemples de réalisation</TranslatedText>
                            </h4>
                          <PhotoProvider>
                         <div className="grid grid-cols-3 gap-4">
-                       {product.resultImages.map((imgUrl, idx) => (
-                         <PhotoView key={idx} src={imgUrl}>
+                       {(product.images?.resultImages || product.resultImages).map((imgUrl, idx) => (
+                         <PhotoView key={idx} src={imgUrl.startsWith('http') ? imgUrl : `/images/${imgUrl}`}>
                         <div className="relative group cursor-zoom-in rounded-lg overflow-hidden shadow-sm">
                            <img
-                         src={imgUrl}
+                         src={imgUrl.startsWith('http') ? imgUrl : `/images/${imgUrl}`}
                          alt={`Exemple ${idx + 1}`}
                       className="w-full h-24 object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <span className="text-white text-sm font-medium">Aperçu</span>
+                        <span className="text-white text-sm font-medium">
+                          <TranslatedText as="span">Aperçu</TranslatedText>
+                        </span>
                           </div>
                             </div>
                          </PhotoView>
@@ -517,7 +576,7 @@ features: [
       {/* Video */}
       <div className="px-4 pb-4">
         <video
-          src={openVideo}
+          src={openVideo.startsWith('http') ? openVideo : `/images/${openVideo}`}
           controls
           autoPlay
           className="w-full rounded-md"
@@ -530,19 +589,56 @@ features: [
 
 
 
+                        {/* Product Tables */}
+                        {product.tables && product.tables.length > 0 && (
+                          <div className="pt-6">
+                            {product.tables.map((table, tableIndex) => (
+                              <div key={tableIndex} className="mb-6">
+                                <h4 className="text-base font-semibold text-gray-800 mb-4 uppercase tracking-wide border-b pb-1">
+                                  <TranslatedText as="span">{table.title}</TranslatedText>
+                                </h4>
+                                <div className="overflow-x-auto">
+                                  <table className="min-w-full border border-gray-300 rounded-lg overflow-hidden">
+                                    <thead className="bg-red-600 text-white">
+                                      <tr>
+                                        {table.columns.map((column, index) => (
+                                          <th key={index} className="border border-gray-300 px-4 py-3 text-left text-sm font-medium">
+                                            <TranslatedText as="span">{column.header}</TranslatedText>
+                                          </th>
+                                        ))}
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      {table.rows.map((row, rowIndex) => (
+                                        <tr key={rowIndex} className={rowIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                                          {row.cells.map((cell, cellIndex) => (
+                                            <td key={cellIndex} className="border border-gray-300 px-4 py-3 text-sm text-gray-700">
+                                              <TranslatedText as="span">{cell.content}</TranslatedText>
+                                            </td>
+                                          ))}
+                                        </tr>
+                                      ))}
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
                         <div className="flex space-x-3 pt-4">
                           <Button className="flex-1 bg-red-600 hover:bg-red-700">
                             <Download className="mr-2 h-4 w-4" />
-                            Fiche Technique
+                            <TranslatedText as="span">Fiche Technique</TranslatedText>
                           </Button>
-  {"demoVideo" in product && product.demoVideo && (
+  {(product.demoVideo || product.images?.demoVideo) && (
      <Button
        variant="outline"
        className="flex-1"
-       onClick={() => setOpenVideo(product.demoVideo!)}
+       onClick={() => setOpenVideo(product.demoVideo || product.images?.demoVideo || '')}
      >
        <Eye className="mr-2 h-4 w-4" />
-       Démonstration
+       <TranslatedText as="span">Démonstration</TranslatedText>
      </Button>
    )}
 
@@ -573,7 +669,9 @@ features: [
   <div className="sticky top-0 z-10 bg-gradient-to-r from-red-600 to-red-500 px-6 py-4 flex items-center justify-between text-white">
     <div className="flex items-center space-x-2">
       <SlidersHorizontal className="h-5 w-5" />
-      <h4 className="text-lg font-semibold">Filtrer les produits</h4>
+      <h4 className="text-lg font-semibold">
+        <TranslatedText as="span">Filtrer les produits</TranslatedText>
+      </h4>
     </div>
     <button onClick={() => setFilterOpen(false)}>
       <CloseIcon className="h-5 w-5" />
@@ -588,13 +686,15 @@ features: [
       <div className="flex items-center mb-3">
         <span className="border-l-4 border-red-600 pl-2 flex items-center space-x-2">
           <Search className="h-5 w-5 text-red-600" />
-          <h5 className="text-sm font-semibold text-gray-700 uppercase">Recherche</h5>
+          <h5 className="text-sm font-semibold text-gray-700 uppercase">
+            <TranslatedText as="span">Recherche</TranslatedText>
+          </h5>
         </span>
       </div>
       <Input
         value={searchText}
         onChange={e => setSearchText(e.currentTarget.value)}
-        placeholder="Type a product name…"
+        placeholder="Tapez un nom de produit…"
         className="bg-gray-50 border-gray-200 focus:border-red-500"
       />
     </section>
@@ -604,7 +704,9 @@ features: [
       <div className="flex items-center mb-3">
         <span className="border-l-4 border-red-600 pl-2 flex items-center space-x-2">
           <Tag className="h-5 w-5 text-red-600" />
-          <h5 className="text-sm font-semibold text-gray-700 uppercase">Application</h5>
+          <h5 className="text-sm font-semibold text-gray-700 uppercase">
+            <TranslatedText as="span">Application</TranslatedText>
+          </h5>
         </span>
       </div>
       <div className="grid grid-cols-2 gap-2">
@@ -635,7 +737,7 @@ features: [
           setAppFilter(null);
         }}
       >
-        Clear All Filters
+        <TranslatedText as="span">Effacer Tous les Filtres</TranslatedText>
       </Button>
     </section>
   </div>
